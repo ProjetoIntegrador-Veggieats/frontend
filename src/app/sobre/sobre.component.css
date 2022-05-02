@@ -1,0 +1,20 @@
+a{
+  font-size: 2rem;
+  color:var(--verdePadrao);
+}
+a:hover{
+  color: var(--laranjaPadrao);
+}
+
+p, h1{
+  color:var(--verdePadrao)
+}
+h5{
+  color:var(--marromPadrao);
+}
+.bg{
+ background-color: rgb(237, 229, 240)
+}
+.bg:hover{
+  background-color: rgb(211, 240, 211)
+}
