@@ -8,3 +8,8 @@ a{
 .verde{
  background-color:  #579d18;
 }
+.centro{
+    justify-content: center;
+    margin: 0 auto;
+    float: right;
+}
