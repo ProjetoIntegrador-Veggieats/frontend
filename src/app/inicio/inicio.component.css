@@ -1,0 +1,21 @@
+/* --CSS DA NAVBAR-- */
+.fs-16{
+  font-size: 16pt;
+}
+
+a{
+  cursor: pointer;
+}
+.verde{
+background-color:  #579d18;
+}
+
+.card-carrosel{
+height: 600.99px;
+width: 1110px;
+display:flex;
+}
+.main-content{
+  display: flex;
+  justify-content: center;
+}
