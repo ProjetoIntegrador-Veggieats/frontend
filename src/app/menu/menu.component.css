@@ -5,11 +5,45 @@
 a{
     cursor: pointer;
 }
-.verde{
- background-color:  #579d18;
+.nav-verde{
+  font-size:18px ;
+  margin-right: 15px;
+  color: var(--verdePadrao);
+}
+.nav-verde:hover{
+  color: var(--roxoPadrao);
+  text-decoration: none;
+}
+.nav-conta{
+  font-size:18px ;
+  margin-right: 15px;
+  color: var(--marromPadrao);
+}
+.nav-conta:hover{
+  color: var(--laranjaPadrao);
+  text-decoration: none;
+}
+.fa{
+  color: var(--marromPadrao)
+}
+.fa:hover{
+  color: var(--laranjaPadrao);
+}
+.bg{
+  background-color:  var(--verdeClaro);
 }
 .centro{
     justify-content: center;
     margin: 0 auto;
     float: right;
+}
+.aumentar:hover{
+  font-size: 1.5rem;
+}
+.dropdown-item{
+  color: var(--marromPadrao);
+}
+.dropdown-item:hover{
+  color: var(--laranjaPadrao);
+  background-color: transparent;
 }
