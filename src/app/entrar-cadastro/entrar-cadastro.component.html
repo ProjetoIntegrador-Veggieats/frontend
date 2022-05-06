@@ -1,29 +1,33 @@
+<div>
+  <h1 class="text-center mt-5">Minha <span>Conta</span></h1>
+</div>
+
 <div class="container-fluid">
-  <div class="row d-flex align-items-center">
+  <div class="row d-flex align-items-baseline ">
 
     <!-- Entrar -->
     <div class="col-md-6">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6 border border-success bg-light rounded">
+      <div class="row d-flex justify-content-end mr-1">
+        <div class="col-md-8">
 
-          <p class="text-center mt-5 mb-5">
+          <p class="text-center">
             Já tem cadastro? Entre aqui!
           </p>
 
-          <h1 class="text-center mb-3">Entrar</h1>
+          <h1 class="text-center">Entrar</h1>
 
           <div class="form-group">
-            <label for="usuario">Usuario</label>
-            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+            <label for="usuario"></label>
+            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Email do Usuário">
           </div>
 
           <div class="form-group">
-            <label for="senha">Senha</label>
-            <input class="form-control" type="pass" name="senha" id="senha" placeholder="Sua senha">
+            <label for="senha"></label>
+            <input class="form-control" type="pass" name="senha" id="senha" placeholder="Senha">
           </div>
 
           <div class="d-flex justify-content-center mt-5 mb-5">
-            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="submit" class="btn btn-verde">Entrar</button>
           </div>
 
         </div>
@@ -33,55 +37,67 @@
     <!-- /Entrar -->
 
     <!-- Cadastrar -->
-    <div class="col-md-6 mt-5 mb-5">
 
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-10 border border-success bg-light rounded">
+    <div class="col-md-6 mt-3">
 
-          <p class="text-center mt-5 mb-5">
+      <div class="row d-flex justify-content-start ml-1">
+        <div class="col-md-10">
+
+          <p class="text-center mt-5">
             Ainda não se cadastrou? Comece por aqui!
           </p>
 
           <h1 class="text-center">Cadastro</h1>
 
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
-          </div>
+          <form>
+            <div class="form-row">
+              <div class="col mb-3">
+                <label for="nome"></label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo">
+              </div>
+              <div class="col">
+                <label for="usuario"></label>
+                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite um e-mail válido">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col mb-3">
+                <label for="cpfcnpj"></label>
+                <input type="text" class="form-control" name="cpfcnpj" id="cpfcnpj" placeholder="Insira seu CPF ou CNPJ">
+              </div>
+              <div class="col">
+                <label for="tipo"></label>
+                <select type="text" class="form-control" name="tipo" id="tipo">
+                  <option>Escolha o tipo do Usuário</option>
+                  <option value="vendedor">Vendedor(a)</option>
+                  <option value="comprador">Comprador(a)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col mb-3">
+                <label for="senha"></label>
+                <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+              </div>
+              <div class="col">
+                <label for="confirmSenha"></label>
+                <input type="password" class="form-control" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
+              </div>
+            </div>
+
+          </form>
 
           <div class="form-group">
-            <label for="usuario">Usuario</label>
-            <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+            <label for="foto"></label>
+            <input class="form-control" type="text" name="foto" id="foto" placeholder="Insira o link da sua foto">
           </div>
 
-          <div class="form-group">
-            <label for="foto">Link</label>
-            <input class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
-          </div>
-
-          <div class="form-group">
-            <label for="senha">Senha</label>
-            <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-          </div>
-
-          <div class="form-group">
-            <label for="confirmSenha">Confirmar Senha</label>
-            <input class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-              placeholder="Confirme sua senha">
-          </div>
-
-          <div class="form-group">
-            <label for="tipo">Tipo de usuario</label>
-            <select class="form-control" name="tipo" id="tipo">
-              <option>Selecione um tipo de usuário</option>
-              <option value="vendedor">Vendedor(a)</option>
-              <option value="comprador">Comprador(a)</option>
-            </select>
-          </div>
 
           <div class="d-flex justify-content-center mt-5 mb-5">
-            <button type="submit" class="btn btn-danger mr-4" routerLink="/entrar">Cancelar</button>
-            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-laranja mr-4" routerLink="/entrar">Cancelar</button>
+            <button type="submit" class="btn btn-verde">Cadastrar</button>
           </div>
 
         </div>
