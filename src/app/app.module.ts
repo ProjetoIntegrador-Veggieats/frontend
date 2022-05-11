@@ -13,6 +13,10 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { EntrarCadastroComponent } from './entrar-cadastro/entrar-cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ContatoComponent,
     InicioComponent,
     RestaurantesComponent,
-    EntrarCadastroComponent
+    EntrarCadastroComponent,
+    CategoriaEditComponent,
+    ProdutoEditComponent,
+    CategoriaDeleteComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   providers: [
     {provide:LocationStrategy,
     useClass: HashLocationStrategy}
-    
+
   ],
   bootstrap: [AppComponent]
 })
