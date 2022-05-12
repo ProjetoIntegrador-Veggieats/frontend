@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Categoria } from '../model/Categoria';
+import { Produto } from '../model/Produto';
+import { AuthService } from '../service/auth.service';
+import { CategoriaService } from '../service/categoria.service';
+import { ProdutoService } from '../service/produto.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Usuario } from '../model/Usuario';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-restaurantes',
@@ -7,9 +16,84 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantesComponent implements OnInit {
 
-  constructor() { }
+  idUsuario = environment.id
+  usuario: Usuario = new Usuario()
+  produto: Produto = new Produto()
 
-  ngOnInit(): void {
+  listaCategorias: Categoria[];
+  listaProdutos: Produto[];
+
+  listaFiltrada: any = []
+
+  constructor(
+    public authService: AuthService,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    window.scroll(0, 0);
+
+    this.getAllCategorias();
+    this.getAllProdutos();
   }
 
+  getAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp;
+    });
+  }
+
+//  getAllProdutos() {
+//     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+//       this.listaProdutos = resp;
+//       this.listaFiltrada = this.listaProdutos.sort((a, b) => a.preco - b.preco).slice(0,8)
+//       console.log(this.listaFiltrada)
+//     });
+//   }
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
+      this.listaProdutos = resp
+    })
+  }
+  findByIdUsuario(){
+  this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) =>{
+    this.usuario= resp
+  })
+}
+
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 600,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplaySpeed: 500,
+    autoplayHoverPause: true,
+    navText: [
+      '<i class="fa fa-angle-left" aria-hidden="true" ></i> P',
+      '<i class="fa fa-angle-right" aria-hidden="true" ></i>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      760: {
+        items: 3,
+      },
+      1000: {
+        items: 4,
+      },
+    },
+    // nav: true,
+  };
 }

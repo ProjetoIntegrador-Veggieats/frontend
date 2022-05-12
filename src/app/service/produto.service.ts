@@ -19,7 +19,7 @@ export class ProdutoService {
     return this.http.get<Produto[]>('https://projeto-veggieats.herokuapp.com/produto',this.token)
   }
 
-  getByIdProdutos(id:number):Observable<Produto>{
+  getByIdProduto(id:number):Observable<Produto>{
     return this.http.get<Produto>(`https://projeto-veggieats.herokuapp.com/produto/${id}`,this.token)
   }
 
