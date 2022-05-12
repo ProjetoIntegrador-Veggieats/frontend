@@ -70,7 +70,7 @@
               </div>
               <div class="col">
                 <label for="tipo"></label>
-                <select [(ngModel)]="usuario.tipoUsuario" type="text" class="form-control" name="tipo" id="tipo">
+                <select (change)="tipoUser($event)" type="text" class="form-control" name="tipo" id="tipo">
                   <option>Escolha o tipo do Usuário</option>
                   <option value="vendedor">Vendedor(a)</option>
                   <option value="comprador">Comprador(a)</option>

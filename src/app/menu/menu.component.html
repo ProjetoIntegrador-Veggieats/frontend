@@ -7,21 +7,22 @@
 
       <ul class="navbar-nav d-flex align-items-center justify-content-center">
         <li class="nav-item active">
-            <img src="../../assets/img/logoVeggi.png" alt="imagem do usuario" width="250px" height="66">
-          </li>
+            <img [src]="foto" alt="imagem do usuario" width="250px" height="66">
+            <p class="nav-verde" href="#">Bem vinde, <span class="texto">{{nome}}</span></p>
+            </li>
       </ul>
       <ul class="navbar-nav d-flex align-items-center ml-auto">
         <li class="nav-item active p-1 fredoka">
             <a class="nav-verde" href="#">INÍCIO <span class="sr-only">(página atual)</span></a>
           </li>
           <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#">RESTAURANTES</a>
+            <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
           </li>
           <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#">SOBRE NÓS</a>
+            <a class="nav-verde" href="#" routerLink="/sobre">SOBRE NÓS</a>
           </li>
           <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#">CONTATO</a>
+            <a class="nav-verde" href="#" routerLink="contato">CONTATO</a>
           </li>
           <li class="nav-item dropdown">
 
@@ -32,9 +33,9 @@
           <li class="nav-item dropdown fredoka">
             <a class="nav-conta dropdown-toggle fs-16" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> ACESSO</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">LOGIN</a>
+              <a class="dropdown-item" href="#"routerLink="/login">LOGIN</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">CADASTRO</a>
+              <a class="dropdown-item" href="#"routerLink="/login">CADASTRO</a>
             </div>
           </li>
           <li class="nav-item pl-3">

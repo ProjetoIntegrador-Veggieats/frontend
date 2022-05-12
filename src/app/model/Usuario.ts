@@ -9,5 +9,4 @@ export class Usuario{
     public cpf:string
     public tipoUsuario:string
     public produto: Produto[]
-
 }

@@ -19,6 +19,7 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { CategoriaComponent } from './categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     ProdutoEditComponent,
     CategoriaDeleteComponent,
     ProdutoDeleteComponent,
+    CategoriaComponent
 
   ],
   imports: [

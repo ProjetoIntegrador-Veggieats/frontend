@@ -24,19 +24,19 @@ export class AuthService {
   }
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin>('https://projeto-veggieats.herokuapp.com/usuario/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>('http://localhost:8080/usuario/logar', usuarioLogin)
   }
 
-  atualizar(Usuario:Usuario): Observable<Usuario>{
-    return this.http.put<Usuario>('http://localhost:8080/usuarios/atualizar',Usuario, this.token)
+  atualizar(usuario:Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('http://localhost:8080/usuario/atualizar',usuario, this.token)
   }
 
   getByIdUsuario(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(`http://localhost:8080/usuarios/${id}`, this.token)
 
   }
-  cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://projeto-veggieats.herokuapp.com/usuario/cadastrar', usuario)
+  cadastrar(usuario:Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar',usuario)
   }
   logado(){
     let ok: boolean = false
