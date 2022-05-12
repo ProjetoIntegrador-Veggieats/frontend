@@ -20,14 +20,14 @@ a{
   color: var(--marromPadrao);
 }
 .nav-conta:hover{
-  color: var(--laranjaPadrao);
+  color: var(--roxoPadrao);
   text-decoration: none;
 }
 .fa{
   color: var(--marromPadrao)
 }
 .fa:hover{
-  color: var(--laranjaPadrao);
+  color: var(--roxoPadrao);
 }
 .bg{
   background-color:  var(--verdeClaro);
@@ -44,6 +44,6 @@ a{
   color: var(--marromPadrao);
 }
 .dropdown-item:hover{
-  color: var(--laranjaPadrao);
+  color: var(--roxoPadrao);
   background-color: transparent;
 }

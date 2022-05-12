@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+  import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -13,24 +13,25 @@ export class CategoriaService {
     private http:HttpClient
   ) {}
 
+
   token={
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  getAllTema():Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('https://projeto-veggieats.herokuapp.com/categoria',this.token)
+  getAllCategoria():Observable<Categoria[]>{
+    return this.http.get<Categoria[]>('http://localhost:8080/categoria')
   }
   getByIdCategoria(id:number):Observable<Categoria>{
-    return this.http.get<Categoria>(`https://projeto-veggieats.herokuapp.com/categoria/${id}`, this.token)
+    return this.http.get<Categoria>(`http://localhost:8080/categoria/${id}`)
   }
   postCategoria(categoria:Categoria):Observable<Categoria>{
-    return this.http.post<Categoria>('https://projeto-veggieats.herokuapp.com/categoria', categoria,this.token)
+    return this.http.post<Categoria>('http://localhost:8080/categoria', categoria,this.token)
   }
   putCategoria(categoria:Categoria):Observable<Categoria>{
-    return this.http.put<Categoria>('https://projeto-veggieats.herokuapp.com/categoria', categoria,this.token)
+    return this.http.put<Categoria>('http://localhost:8080/categoria', categoria,this.token)
   }
   deleteCategoria(id:number){
-    return this.http.delete(`https://projeto-veggieats.herokuapp.com/categoria/${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/categoria/${id}`, this.token)
   }
 }
 

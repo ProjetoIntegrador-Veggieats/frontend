@@ -39,7 +39,7 @@ export class ProdutoEditComponent implements OnInit {
   }
 
   findByIdProduto(id:number){
-    this.produtoService.getByIdProduto(id).subscribe((resp:Produto)=>{
+    this.produtoService.getByIdProdutos(id).subscribe((resp:Produto)=>{
       this.produto = resp
     })
   }

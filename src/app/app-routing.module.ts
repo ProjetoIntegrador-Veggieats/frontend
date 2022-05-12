@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoriaComponent } from './categoria/categoria.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarCadastroComponent } from './entrar-cadastro/entrar-cadastro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"inicio",pathMatch:"full"},
@@ -12,7 +14,12 @@ const routes: Routes = [
   {path:"sobre", component:SobreComponent},
   {path:"inicio", component:InicioComponent},
   {path:"contato", component:ContatoComponent},
-  {path:"login", component:EntrarCadastroComponent}
+  {path:"login", component:EntrarCadastroComponent},
+
+
+  {path: "categoria", component:CategoriaComponent},
+  {path: "categoria-edit/:id", component: CategoriaEditComponent}
+
 
 
 ];

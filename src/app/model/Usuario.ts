@@ -8,6 +8,6 @@ export class Usuario{
     public senha:string
     public cpf:string
     public tipoUsuario:string
-    public Produto: Produto[]
+    public produto: Produto[]
     
 }
