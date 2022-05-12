@@ -33,8 +33,8 @@ findByIdCategoria(id:number){
 }
 atualizar(){
   this.categoriaService.putCategoria(this.categoria).subscribe((resp:Categoria)=>{this.categoria=resp
-  alert('Tema atualizado')
-  this.router.navigate(['/categoria'])}
+  alert('Categoria atualizada')
+  this.router.navigate(['/inicio'])}
   )
 }
 }

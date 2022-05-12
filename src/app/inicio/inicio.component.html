@@ -70,7 +70,8 @@
       <div class="card-body">
         <h5 class="card-title">{{item.nome}}</h5>
         <p class="card-text">{{item.descricao}}</p>
-        <button>Adicionar ao carrinho</button>
+        <a [routerLink]="['/categoria-edit', item.id]" class="mr-5" href="">Editar</a>
+        <a [routerLink]="['/categoria-delete', item.id]" href="">Apagar</a>
       </div>
     </div>
   </div>
