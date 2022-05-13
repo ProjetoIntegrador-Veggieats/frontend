@@ -7,15 +7,8 @@
 
       <ul class="navbar-nav d-flex align-items-center justify-content-center">
         <li class="nav-item active">
-
-    <div *ngIf="login">
-          <img src="../assets/img/logoVeg.png" class="logoVeg" alt="imagem do usuario">
-            <p class="nav-verde" href="#">Bem-vind@, <span class="texto">{{nome}}</span></p>
-            </div>
-    <div *ngIf="idUser">
-      <img src="../assets/img/logoVeg.png" class="logoVeg" alt="imagem do usuario">
-      <p class="nav-verde" href="#">Bem-vind@, <span class="texto">{{nome}}</span></p>
-    </div>
+          <img [src]="foto" onerror="this.src = 'assets/img/logo.jpg'" alt="imagem do usuario" class="rounded-circle" width="50">
+          <p class="nav-verde" href="#">Bem vinde, <span class="texto">{{nome}}</span></p>
           </li>
 
       </ul>
