@@ -28,7 +28,7 @@ export class CategoriaService {
     return this.http.get<Categoria[]>('https://veggieats.herokuapp.com/categoria')
   }
   getByIdCategoria(id:number):Observable<Categoria>{
-    return this.http.get<Categoria>(`https://veggieats.herokuapp.com/categoria/${id}`)
+    return this.http.get<Categoria>(`https://veggieats.herokuapp.com/categoria/${id}`, this.token)
   }
 
   getByNomeCategoria(nome: string):Observable<Categoria[]>{
