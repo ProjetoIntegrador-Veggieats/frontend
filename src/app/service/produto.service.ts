@@ -16,28 +16,32 @@ export class ProdutoService {
   }
 
   refreshToken(){
-    this. token={
+    this.token={
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
   }
-  getAllProdutos():Observable<Produto[]>{
-    return this.http.get<Produto[]>('http://localhost:8080/produto')
+
+  getAllProdutos(): Observable<Produto[]>{
+    return this.http.get<Produto[]>('https://veggieats.herokuapp.com/produto')
   }
 
-
-  getByIdProdutos(id:number):Observable<Produto>{
-    return this.http.get<Produto>(`http://localhost:8080/produto/${id}`)
+  getByIdProdutos(id:number): Observable<Produto>{
+    return this.http.get<Produto>(`https://veggieats.herokuapp.com/produto/${id}`)
   }
 
-  postProduto(produto: Produto):Observable<Produto>{
-    return this.http.post<Produto>('http://localhost:8080/produto', produto,this.token)
+  getByNomeProduto(nome: string): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`https://veggieats.herokuapp.com/produto/nome/${nome}`, this.token)
   }
 
-  putProduto(produto: Produto):Observable<Produto>{
-    return this.http.put<Produto>('http://localhost:8080/produto', produto,this.token)
+  postProduto(produto: Produto): Observable<Produto>{
+    return this.http.post<Produto>('https://veggieats.herokuapp.com/produto', produto, this.token)
+  }
+
+  putProduto(produto: Produto): Observable<Produto>{
+    return this.http.put<Produto>('https://veggieats.herokuapp.com/produto', produto, this.token)
   }
 
   deleteProduto(id:number){
-    return this.http.delete(`http://localhost:8080/produto/${id}`,this.token)
+    return this.http.delete(`https://veggieats.herokuapp.com/produto/${id}`,this.token)
   }
 }

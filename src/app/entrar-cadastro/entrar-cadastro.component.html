@@ -1,3 +1,5 @@
+<div class="container fredoka">
+
 <div>
   <h1 class="text-center mt-5">Minha <span>Conta</span></h1>
 </div>
@@ -55,23 +57,23 @@
             <div class="form-row">
               <div class="col mb-3">
                 <label for="nome"></label>
-                <input [(ngModel)]="usuario.nome" type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome completo">
+                <input [(ngModel)]="usuario.nome" type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome">
               </div>
               <div class="col">
                 <label for="usuario"></label>
-                <input [(ngModel)]="usuario.usuario" type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite um e-mail válido">
+                <input [(ngModel)]="usuario.usuario" type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu e-mail">
               </div>
             </div>
 
             <div class="form-row">
               <div class="col mb-3">
                 <label for="cpf"></label>
-                <input [(ngModel)]="usuario.cpf" type="text" class="form-control" name="cpf" id="cpf" placeholder="Insira seu CPF ou CNPJ">
+                <input [(ngModel)]="usuario.cpf" type="text" class="form-control" name="cpf" id="cpf" placeholder="Insira o CPF ou CNPJ">
               </div>
               <div class="col">
                 <label for="tipo"></label>
                 <select (change)="tipoUser($event)" type="text" class="form-control" name="tipo" id="tipo">
-                  <option>Escolha o tipo do Usuário</option>
+                  <option>Tipo do Usuário</option>
                   <option value="vendedor">Vendedor(a)</option>
                   <option value="comprador">Comprador(a)</option>
                 </select>
@@ -109,4 +111,5 @@
     <!-- /Cadastrar -->
 
   </div>
+</div>
 </div>
