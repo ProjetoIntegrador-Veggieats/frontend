@@ -23,7 +23,7 @@ export class CategoriaDeleteComponent implements OnInit {
   ngOnInit() {
     if(environment.token==''){
       alert("Sua sessão expirou")
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/login'])
   }
   this.idCategoria=this.route.snapshot.params['id']
   this.findByIdCategoria(this.idCategoria)
@@ -34,7 +34,7 @@ findByIdCategoria(id:number){
 }
 apagar(){
   this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-    alert('Tema apagado')
-  this.router.navigate(['/categoria'])}
+    alert('Categoria apagada')
+  this.router.navigate(['/inicio'])}
   )
 }}

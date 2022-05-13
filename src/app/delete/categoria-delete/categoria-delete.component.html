@@ -1,15 +1,25 @@
-<div class="container-fluid py-5">
-  <div class="container d-flex flex-column align-content-center">
-    <h1 class="text-center">Deletar tema</h1>
-
-    <p class="text-center">Você tem certeza de que deseja apagar o tema <span class="font-weight-bold">{{categoria.nome}}</span>?</p>
-    <p class="text-center">Todas as postagens feitas com esse tema, irão de base junto com ele...</p>
-
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6 d-flex justify-content-around">
-        <button class="btn btn-outline-dark" routerLink="/categoria">Cancelar</button>
-        <button class="btn btn-outline-danger" (click)="apagar()"><b>DELETAR</b></button>
-      </div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-secondary">Apagar Categoria</h1>
+        </div>
     </div>
-  </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center text-secondary">Você tem certeza? Todas as produtos dessa categoria serão apagados</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-center text-info">Categoria: {{categoria.nome}}</h5>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+        <button class="btn btn-danger mr-4" routerLink="/inicio">Não</button>
+        <button class="btn btn-success" (click)="apagar()">Apagar</button>
+    </div></div>
 </div>
