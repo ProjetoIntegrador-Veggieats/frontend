@@ -33,6 +33,7 @@ export class ProdutoDeleteComponent implements OnInit {
     this.idPost=this.route.snapshot.params['id']
     this.findByIdproduto(this.idPost)
 
+    this.produtoService.refreshToken()
   }
 
   findByIdproduto(id:number){
@@ -43,8 +44,8 @@ export class ProdutoDeleteComponent implements OnInit {
 
   apagar(){
     this.produtoService.deleteProduto(this.idPost).subscribe(()=>{
-      alert('produto apagada')
-    this.router.navigate(['/inicio'])}
+      alert('produto apagado')
+    this.router.navigate(['/produto'])}
     )
   }}
 

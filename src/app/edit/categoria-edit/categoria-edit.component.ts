@@ -24,6 +24,8 @@ export class CategoriaEditComponent implements OnInit {
       alert("Sua sessão expirou")
       this.router.navigate(['/entrar'])
   }
+
+  this.categoriaService.refreshToken()
     let id=this.route.snapshot.params['id']
     this.findByIdCategoria(id)
   }
@@ -32,6 +34,7 @@ findByIdCategoria(id:number){
 
 }
 atualizar(){
+  this.categoria.produto = []
   this.categoriaService.putCategoria(this.categoria).subscribe((resp:Categoria)=>{this.categoria=resp
   alert('Categoria atualizada')
   this.router.navigate(['/inicio'])}

@@ -64,7 +64,7 @@
 
 
 <!--                              ! CARDS RESTAURANTES                                    -->
-      <div class="container" *ngFor="let item of usuario.produto">
+      <div class="container" *ngFor="let item of listaProdutos">
         <p>
           <a  class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > {{item.usuario.foto}}</a>
         <div class="collapse" id="collapseExample">
@@ -77,6 +77,8 @@
                     <h5 class="card-title">{{item.nome}}</h5>
                     <p class="card-text">{{item.descricao}}</p>
                     <!-- todo: fazer carrinho de compra -------  <a href="#" class="btn btn-success">COMPRAR</a> -->
+                    <a [routerLink]="['/produto-edit', item.id]">editar</a>
+                    <a [routerLink]="['/produto-delete', item.id]">deletar</a>
                   </div>
                 </div>
               </div>
