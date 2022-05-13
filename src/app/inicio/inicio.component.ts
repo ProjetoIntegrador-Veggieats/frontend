@@ -7,6 +7,8 @@ import { Usuario } from '../model/Usuario';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { AuthService } from '../service/auth.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-inicio',
@@ -21,24 +23,34 @@ export class InicioComponent implements OnInit {
     idCategoria:number
     categoria:Categoria=new Categoria()
     user:Usuario=new Usuario()
-    idUser=environment.id
+    idUser:any;
+    userLog:any;
+
   constructor(
     private router:Router,
     private produtoService:ProdutoService,
     private categoriaService:CategoriaService,
-    private authService:AuthService
-  ) { }
+    private authService:AuthService,
+    private route: ActivatedRoute
+    ) { }
 
-  ngOnInit() {
+    ngOnInit() {
+      this.route.queryParams.subscribe( params => {
+        this.userLog = params['user']
+        console.log(this.userLog, 'PARAMSSSSSSSSS')
+      })
+      this.findByIdUsuario();
 
-    if(environment.token==''){
-     alert("Sua sessão expirou")
+
+      console.log(this.user, 'USERRRRRRR')
+      if(environment.token==''){
+    alert("Sua sessão expirou")
       this.router.navigate(['/login'])
     }
     this.authService.refreshToken()
     this.getAllCategorias()
     this.getAllProdutos()
-    
+
   }
 
   getAllCategorias(){
@@ -57,8 +69,8 @@ export class InicioComponent implements OnInit {
       this.listaProdutos=resp
     })
   }
-  findByIdUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp:Usuario)=>{
+  findByIdUsuario(){
+    this.authService.getByIdUsuario(this.userLog).subscribe((resp:Usuario)=>{
       this.user=resp
     })
   }
