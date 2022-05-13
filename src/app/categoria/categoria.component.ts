@@ -24,6 +24,7 @@ ngOnInit() {
     alert("Sua sessão expirou")
   this.router.navigate(['/login'])
   }
+  this.categoriaService.refreshToken()
   this.findAllCategorias()
 }
 

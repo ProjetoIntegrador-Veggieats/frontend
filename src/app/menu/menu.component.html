@@ -7,6 +7,7 @@
 
       <ul class="navbar-nav d-flex align-items-center justify-content-center">
         <li class="nav-item active">
+
     <div *ngIf="login">
           <img src="../assets/img/logoVeg.png" class="logoVeg" alt="imagem do usuario">
             <p class="nav-verde" href="#">Bem-vind@, <span class="texto">{{nome}}</span></p>
@@ -16,10 +17,11 @@
       <p class="nav-verde" href="#">Bem-vind@, <span class="texto">{{nome}}</span></p>
     </div>
           </li>
+
       </ul>
       <ul class="navbar-nav d-flex align-items-center ml-auto">
         <li class="nav-item active p-1 fredoka">
-            <a class="nav-verde" href="#">INÍCIO <span class="sr-only">(página atual)</span></a>
+            <a class="nav-verde" href="#">INÍCIO<span class="sr-only">(página atual)</span></a>
           </li>
           <li class="nav-item p-1 fredoka">
             <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
