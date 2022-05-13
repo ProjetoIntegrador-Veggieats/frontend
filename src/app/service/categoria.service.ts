@@ -25,19 +25,24 @@ export class CategoriaService {
   }
 
   getAllCategoria():Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categoria')
+    return this.http.get<Categoria[]>('https://veggieats.herokuapp.com/categoria')
   }
   getByIdCategoria(id:number):Observable<Categoria>{
-    return this.http.get<Categoria>(`http://localhost:8080/categoria/${id}`)
+    return this.http.get<Categoria>(`https://veggieats.herokuapp.com/categoria/${id}`)
   }
+
+  getByNomeCategoria(nome: string):Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(`https://veggieats.herokuapp.com/categoria/nome/${nome}`, this.token)
+  }
+
   postCategoria(categoria:Categoria):Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categoria', categoria,this.token)
+    return this.http.post<Categoria>('https://veggieats.herokuapp.com/categoria', categoria,this.token)
   }
   putCategoria(categoria:Categoria):Observable<Categoria>{
-    return this.http.put<Categoria>('http://localhost:8080/categoria', categoria,this.token)
+    return this.http.put<Categoria>('https://veggieats.herokuapp.com/categoria', categoria,this.token)
   }
   deleteCategoria(id:number){
-    return this.http.delete(`http://localhost:8080/categoria/${id}`, this.token)
+    return this.http.delete(`https://veggieats.herokuapp.com/categoria/${id}`, this.token)
   }
 }
 

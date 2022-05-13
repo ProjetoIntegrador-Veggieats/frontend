@@ -16,29 +16,30 @@ import { ProdutoService } from '../service/produto.service';
 export class ProdutoComponent implements OnInit {
 
   produto: Produto = new Produto ()
-  listaCategorias:Categoria[]
-  listaProdutos:Produto[]
-  idCategoria:number
-  categoria:Categoria=new Categoria()
-  user:Usuario=new Usuario()
-  idUser=environment.id
+  listaCategorias: Categoria[]
+  listaProdutos: Produto[]
+  idCategoria: number
+  categoria: Categoria= new Categoria()
+  user: Usuario= new Usuario()
+  idUser= environment.id
+
 constructor(
-  private router:Router,
-  private produtoService:ProdutoService,
-  private categoriaService:CategoriaService,
-  private authService:AuthService
+  private router: Router,
+  private produtoService: ProdutoService,
+  private categoriaService: CategoriaService,
+  private authService: AuthService
 ) { }
 
 ngOnInit() {
 
   if(environment.token==''){
-   alert("Sua sessão expirou")
+  alert("Sua sessão expirou")
     this.router.navigate(['/login'])
   }
   this.authService.refreshToken()
   this.getAllCategorias()
   this.getAllProdutos()
-  
+
 }
 
 getAllCategorias(){
@@ -63,13 +64,14 @@ findByIdUser(){
   })
 }
 publicar(){
-  this.categoria.id=this.idCategoria
-  this.produto.categoria=this.categoria
-  this.user.id=this.idUser
-  this.produto.usuario=this.user
-  this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {this.produto=resp
+  this.categoria.id= this.idCategoria
+  this.produto.categoria= this.categoria
+  this.user.id= this.idUser
+  this.produto.usuario= this.user
+  this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>
+  {this.produto=resp
   alert('Produto cadastrado')
-    this.produto=new Produto()
+    this.produto= new Produto()
     this.getAllProdutos()
   })
 }

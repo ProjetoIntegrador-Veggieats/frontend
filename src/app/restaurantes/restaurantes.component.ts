@@ -25,6 +25,8 @@ export class RestaurantesComponent implements OnInit {
 
   listaFiltrada: any = []
 
+  nomeProduto: string
+
   constructor(
     public authService: AuthService,
     private produtoService: ProdutoService,
@@ -63,6 +65,19 @@ export class RestaurantesComponent implements OnInit {
     this.usuario= resp
   })
 }
+
+  findByTituloProduto(){
+    if(this.nomeProduto == ''){
+      this.getAllProdutos()
+    } else{
+        this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[]) =>{
+          this.listaProdutos = resp
+     })
+    }
+
+
+
+  }
 
 
   customOptions: OwlOptions = {
