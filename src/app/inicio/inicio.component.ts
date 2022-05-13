@@ -32,13 +32,13 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
 
     if(environment.token==''){
-     alert("Sua sessão expirou")
+    alert("Sua sessão expirou")
       this.router.navigate(['/login'])
     }
     this.authService.refreshToken()
     this.getAllCategorias()
     this.getAllProdutos()
-    
+
   }
 
   getAllCategorias(){
@@ -58,7 +58,7 @@ export class InicioComponent implements OnInit {
     })
   }
   findByIdUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp:Usuario)=>{
+    this.authService.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
       this.user=resp
     })
   }
