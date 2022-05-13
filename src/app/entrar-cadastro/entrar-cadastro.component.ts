@@ -23,7 +23,7 @@ export class EntrarCadastroComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
   }
-  
+
   confirmSenha(event:any){
     this.confirmarSenha=event.target.value
   }
@@ -38,26 +38,27 @@ export class EntrarCadastroComponent implements OnInit {
       if(this.usuario.senha != this.confirmarSenha){
       alert("As senhas estão incorretas")
       }else{
-        this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=> {this.usuario=resp 
+        this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=> {this.usuario=resp
         this.router.navigate(["/inicio"])
-        alert("Usuario cadastrado com sucesso!")}        
-        
+        alert("Usuario cadastrado com sucesso!")}
+
         )
       }
   }
   entrar(){
-    this.authService.logar(this.usuarioLogin).subscribe({next:(resp: UsuarioLogin)=>{this.usuarioLogin=resp 
+    this.authService.logar(this.usuarioLogin).subscribe({next:(resp: UsuarioLogin)=>{this.usuarioLogin=resp
       environment.token=this.usuarioLogin.token
       environment.nome=this.usuarioLogin.nome
       environment.foto=this.usuarioLogin.foto
       environment.id=this.usuarioLogin.id
-      
+
       console.log(environment.token)
       console.log(environment.nome)
       console.log(environment.foto)
-     console.log(environment.id)
-     
-      this.router.navigate(['/inicio'])}, 
+      console.log(environment.id)
+
+
+      this.router.navigate(['/inicio'], { queryParams: { user: environment.id } })},
       error: erro=> {
       if (erro.status==401) {
         alert("Usuário ou senha incorretos")

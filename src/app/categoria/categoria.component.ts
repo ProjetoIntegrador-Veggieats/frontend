@@ -35,13 +35,13 @@ this.categoriaService.getAllCategoria().subscribe((resp:Categoria[])=>{
 
 cadastrar(){
   console.log(this.categoria)
-  this.categoriaService.postCategoria(this.categoria).subscribe((resp:Categoria)=>{ 
-  this.categoria=resp 
+  this.categoriaService.postCategoria(this.categoria).subscribe((resp:Categoria)=>{
+  this.categoria=resp
   alert('Categoria cadastrada com sucesso')
   this.findAllCategorias()
     this.categoria=new Categoria()
     this.findAllCategorias()
-   })
+  })
 }
 
 }

@@ -33,5 +33,8 @@ export class CategoriaService {
   deleteCategoria(id:number){
     return this.http.delete(`http://localhost:8080/categoria/${id}`, this.token)
   }
+  getUsuarioById(id:number) {
+    return this.http.delete(`http://localhost:8080/usuario/${id}`, this.token)
+  }
 }
 
