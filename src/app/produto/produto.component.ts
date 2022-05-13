@@ -37,41 +37,45 @@ ngOnInit() {
     this.router.navigate(['/login'])
   }
   this.authService.refreshToken()
+  this.produtoService.refreshToken()
+  this.categoriaService.refreshToken()
   this.getAllCategorias()
   this.getAllProdutos()
 
 }
 
 getAllCategorias(){
-  this.categoriaService.getAllCategoria().subscribe((resp:Categoria[])=>{
-    this.listaCategorias=resp
+  this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) =>{
+    this.listaCategorias = resp
   })
 }
 
 findByIdCategoria(){
-  this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp:Categoria)=>{
-    this.categoria=resp
+  this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
+    this.categoria = resp
   })
 }
 getAllProdutos(){
-  this.produtoService.getAllProdutos().subscribe((resp:Produto[])=>{
-    this.listaProdutos=resp
+  this.produtoService.getAllProdutos().subscribe((resp: Produto[] ) =>{
+    this.listaProdutos = resp
   })
 }
 findByIdUser(){
-  this.authService.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
-    this.user=resp
+  this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) =>{
+    this.user = resp
   })
 }
 publicar(){
-  this.categoria.id= this.idCategoria
-  this.produto.categoria= this.categoria
-  this.user.id= this.idUser
-  this.produto.usuario= this.user
-  this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>
-  {this.produto=resp
+  this.categoria.id = this.idCategoria
+  this.produto.categoria = this.categoria
+
+  this.user.id = this.idUser
+  this.produto.usuario = this.user
+
+  this.produtoService.postProduto(this.produto).subscribe((resp: Produto) =>{
+    this.produto=resp
   alert('Produto cadastrado')
-    this.produto= new Produto()
+    this.produto = new Produto()
     this.getAllProdutos()
   })
 }
