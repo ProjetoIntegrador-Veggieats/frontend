@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/service/categoria.service';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -20,6 +20,7 @@ export class CategoriaEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.categoria, "categoriaAqui");
     if(environment.token==''){
       alert("Sua sessão expirou")
       this.router.navigate(['/entrar'])

@@ -7,6 +7,8 @@ import { Usuario } from '../model/Usuario';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { AuthService } from '../service/auth.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-inicio',
@@ -21,15 +23,18 @@ export class InicioComponent implements OnInit {
     idCategoria:number
     categoria:Categoria=new Categoria()
     user:Usuario=new Usuario()
-    idUser=environment.id
+    idUser:any;
+    userLog:any;
+
   constructor(
     private router:Router,
     private produtoService:ProdutoService,
     private categoriaService:CategoriaService,
-    private authService:AuthService
-  ) { }
+    private authService:AuthService,
+    private route: ActivatedRoute
+    ) { }
 
-  ngOnInit() {
+    ngOnInit() {
 
     if(environment.token==''){
     alert("Sua sessão expirou")

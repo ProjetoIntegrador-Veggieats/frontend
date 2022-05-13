@@ -7,6 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"inicio",pathMatch:"full"},
@@ -18,7 +19,8 @@ const routes: Routes = [
 
 
   {path: "categoria", component:CategoriaComponent},
-  {path: "categoria-edit/:id", component: CategoriaEditComponent}
+  {path: "categoria-edit/:id", component: CategoriaEditComponent},
+  {path: "categoria-delete/:id", component: CategoriaDeleteComponent}
 
 
 

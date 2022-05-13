@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   nome: string = environment.nome
   foto: string = environment.foto
   idUser: number = environment.id
-
+  login: boolean = true
   constructor(private router:Router) { }
 
   ngOnInit() {

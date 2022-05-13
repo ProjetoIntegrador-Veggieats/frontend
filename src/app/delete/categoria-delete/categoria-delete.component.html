@@ -1,1 +1,15 @@
-<p>categoria-delete works!</p>
+<div class="container-fluid py-5">
+  <div class="container d-flex flex-column align-content-center">
+    <h1 class="text-center">Deletar tema</h1>
+
+    <p class="text-center">Você tem certeza de que deseja apagar o tema <span class="font-weight-bold">{{categoria.nome}}</span>?</p>
+    <p class="text-center">Todas as postagens feitas com esse tema, irão de base junto com ele...</p>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 d-flex justify-content-around">
+        <button class="btn btn-outline-dark" routerLink="/categoria">Cancelar</button>
+        <button class="btn btn-outline-danger" (click)="apagar()"><b>DELETAR</b></button>
+      </div>
+    </div>
+  </div>
+</div>

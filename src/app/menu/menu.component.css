@@ -47,3 +47,8 @@ a{
   color: var(--roxoPadrao);
   background-color: transparent;
 }
+.logoVeg{
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+}

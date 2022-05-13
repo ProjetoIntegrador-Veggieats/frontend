@@ -1,1 +1,21 @@
-<p>categoria-edit works!</p>
+<div class="container-fluid py-5">
+  <div class="container">
+    <h1 class="text-center">Editar tema {{categoria.nome}}</h1>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="">Descricao</label>
+          <input type="text" name="descricao" id="tema" class="form-control" [(ngModel)]="categoria.descricao">
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-6 d-flex justify-content-around">
+            <button class="btn btn-outline-danger" routerLink="/categoria">Cancelar</button>
+            <button class="btn btn-outline-dark" (click)="atualizar()">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
