@@ -3,9 +3,6 @@
   font-size: 16pt;
 }
 
-a{
-  cursor: pointer;
-}
 .verde{
 background-color:  #579d18;
 }
@@ -18,4 +15,21 @@ display:flex;
 .main-content{
   display: flex;
   justify-content: center;
+}
+.clicavel {
+  cursor: pointer;
+  background-color: var(--larajaClaro);
+  padding: 15px;
+}
+.clicavel:hover{
+  text-decoration: none;
+  color:var(--verdePadrao)
+}
+.jumbotron{
+  padding: 0px;
+  background-color: var(--verdePadrao);
+  color: white;
+}
+.lead{
+  font-size: 15px;
 }

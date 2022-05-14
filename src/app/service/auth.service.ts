@@ -32,12 +32,18 @@ export class AuthService {
   }
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://veggieats.herokuapp.com/usuarios/${id}`, this.token)
+    return this.http.get<Usuario>(`https://veggieats.herokuapp.com/usuario/${id}`, this.token)
 
   }
   cadastrar(usuario:Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('https://veggieats.herokuapp.com/usuario/cadastrar',usuario)
   }
+
+  getAllUsuarios(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>('https://veggieats.herokuapp.com/usuario/all', this.token)
+  
+    }
+
   logado(){
     let ok: boolean = false
 

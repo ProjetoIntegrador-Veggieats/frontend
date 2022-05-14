@@ -42,7 +42,7 @@ cadastrar(){
   this.findAllCategorias()
     this.categoria=new Categoria()
     this.findAllCategorias()
-   })
+  })
 }
 
 }

@@ -1,5 +1,5 @@
 .fs-16{
-    font-size: 16pt;
+    font-size: 14pt;
 }
 
 a{
@@ -38,7 +38,7 @@ a{
     float: right;
 }
 .aumentar:hover{
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .dropdown-item{
   color: var(--marromPadrao);

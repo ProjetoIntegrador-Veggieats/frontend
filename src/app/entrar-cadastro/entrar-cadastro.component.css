@@ -23,3 +23,6 @@ span{
   background-color: #dc9b1e;
 }
 
+.verticalLine {
+  border-left: thick solid #ff0000;
+}

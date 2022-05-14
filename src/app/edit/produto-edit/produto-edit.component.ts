@@ -64,10 +64,11 @@ export class ProdutoEditComponent implements OnInit {
   atualizar(){
     this.categoria.id=this.idCategoria
     this.produto.categoria = this.categoria
+
     this.produtoService.putProduto(this.produto).subscribe((resp:Produto)=>{
       this.produto=resp
       alert('Produto atualizado')
-      this.router.navigate(['/produto'])
+      this.router.navigate(['/restaurante'])
     })
   }
 

@@ -22,11 +22,11 @@ export class ProdutoService {
   }
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('https://veggieats.herokuapp.com/produto')
+    return this.http.get<Produto[]>('https://veggieats.herokuapp.com/produto', this.token)
   }
 
   getByIdProdutos(id:number): Observable<Produto>{
-    return this.http.get<Produto>(`https://veggieats.herokuapp.com/produto/${id}`)
+    return this.http.get<Produto>(`https://veggieats.herokuapp.com/produto/${id}`, this.token)
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{

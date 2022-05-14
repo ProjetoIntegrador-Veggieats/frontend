@@ -22,6 +22,7 @@ export class RestaurantesComponent implements OnInit {
 
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
+  listaUsuarios: Usuario[];
 
   listaFiltrada: any = []
 
@@ -36,7 +37,8 @@ export class RestaurantesComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+    
+    this.authService.refreshToken()
     this.getAllCategorias();
     this.getAllProdutos();
   }
@@ -60,6 +62,13 @@ export class RestaurantesComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
+
+  getAllUsuarios() {
+    this.authService.getAllUsuarios().subscribe((resp: Usuario[]) => {
+      this.listaUsuarios = resp;
+    });
+  }
+
   findByIdUsuario(){
   this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) =>{
     this.usuario= resp
@@ -72,7 +81,7 @@ export class RestaurantesComponent implements OnInit {
     } else{
         this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[]) =>{
           this.listaProdutos = resp
-     })
+    })
     }
 
 
