@@ -20,7 +20,8 @@ export class CategoriaEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.categoria, "categoriaAqui");
+
+    window.scroll(0,0)
     if(environment.token==''){
       alert("Sua sessão expirou")
       this.router.navigate(['/entrar'])

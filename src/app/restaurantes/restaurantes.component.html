@@ -39,21 +39,58 @@
 
 	<div class="row" id="filter" class="d-flex justify-content-around">
 		<form class="form-row">
+
+
 			<div class="form-group col-sm-3 col-xs-6">
-		  <button class="form-control" >BOTAO</button>
+		  <button class="form-control">BOTAO</button>
 			</div>
 
       <div class="form-group col-sm-3 col-xs-6">
-        <button class="form-control" >BOTAO</button>
+        <button class="form-control">BOTAO</button>
         </div>
 
         <div class="form-group col-sm-3 col-xs-6">
-          <button class="form-control" >BOTAO</button>
+          <button class="form-control">BOTAO</button>
           </div>
 
-          <div class="form-group col-sm-3 col-xs-6">
-            <button class="form-control" >BOTAO</button>
-            </div>
+
+      <!-- <div class="form-group col-sm-3 col-xs-6">
+        <a
+        class="nav-link active text-secondary font-weight-bold"
+        id="nav-todosProdutos-tab"
+        data-toggle="tab"
+        href="#todosProdutos"
+        role="tab"
+        aria-controls="todosProdutos"
+        aria-selected="true"
+        >Todos os Produtos</a
+      >
+        </div> -->
+
+        <!-- <div class="form-group col-sm-3 col-xs-6">
+          <a
+          class="nav-link active text-secondary font-weight-bold"
+          id="nav-prodPorRestaurante-tab"
+          data-toggle="tab"
+          href="#prodPorRestaurante"
+          role="tab"
+          aria-controls="prodPorRestaurante"
+          aria-selected="true"
+          >Produtos por Restaurantes</a>
+          </div> -->
+
+          <!-- <div class="form-group col-sm-3 col-xs-6">
+            <a
+            class="nav-link active text-secondary font-weight-bold"
+            id="nav-prodPorCategoria-tab"
+            data-toggle="tab"
+            href="#prodPorCategoria"
+            role="tab"
+            aria-controls="prodPorCategoria"
+            aria-selected="true"
+            >Produtos por Categoria</a
+          >
+            </div> -->
 		</form>
 	</div>
 </div>
@@ -64,28 +101,143 @@
 
 
 
-<!--                              ! CARDS RESTAURANTES                                    -->
-      <div class="container" *ngFor="let item of listaProdutos">
-        <p>
-          <a  class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > {{item.usuario.foto}}</a>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="{{item.foto}}" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">{{item.nome}}</h5>
-                    <p class="card-text">{{item.descricao}}</p>
-                    <!-- todo: fazer carrinho de compra -------  <a href="#" class="btn btn-success">COMPRAR</a> -->
-                    <a [routerLink]="['/produto-edit', item.id]">editar</a>
-                    <a [routerLink]="['/produto-delete', item.id]">deletar</a>
-                  </div>
-                </div>
+<!--                              ! CARDS RESTAURANTES                                          -->
+    <div class="tab-content mt-5 container-fluid d-flex justify-content-around" id="nav-tabContent">
+
+<!--                              ! TODOS OS PRODUTOS                                          -->
+    <!-- <div class="container" >
+      <div class="row">
+        <div class="col-md-3">
+        <div class="tab-pane fade" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
+          <div class="card-columns d-flex justify-content-center" *ngFor="let item of listaProdutos">
+          <div class="card text-center" style="width: 18rem;">
+            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+              <div class="card-body">
+                <h5 class="card-title">{{item.nome}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{item.usuario.nome}}</h6>
+                <p class="card-text">{{item.descricao}}</p>
+                <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+                <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
               </div>
             </div>
           </div>
         </div>
+      </div></div>
+      </div> -->
+
+
+      <!--                              /! TODOS OS PRODUTOS                                      -->
+
+      <!--                              ! POR RESTAURANTE             -->
+
+      <!-- <div class="container" *ngFor="let usuarios of listaUsuarios">
+        <div *ngFor="let item of usuario.produto"> -->
+        <!-- <div *ngIf="usuario.tipoUsuario == 'vendedor'"> -->
+          
+
+          <!-- <div class="tab-pane fade" id="prodPorRestaurante" role="tabpanel" aria-labelledby="prodPorRestaurante-tab"> -->
+            <!-- <div class="card text-center" style="width: 18rem;">
+              <img src="{{usuario.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+              <div class="card-body">
+                <h5 class="card-title">{{usuario.nome}}</h5>
+                <! <h6 class="card-subtitle mb-2 text-muted">{{usuario.usuario.nome}}</h6>
+                <p class="card-text">{{usuario.descricao}}</p> -->
+                <!-- <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+                <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a> -->
+            <!-- </div>
+          </div> -->
+        <!-- </div>
       </div>
-<!--                              /! CARDS RESTAURANTES                                    -->
+    </div> -->
+  <!-- </div> -->
+
+        
+
+
+
+    <!--                              ! /POR RESTAURANTE                                          -->
+
+
+    <!--                              ! POR CATEGORIA                                          -->
+
+    
+    
+  </div>
+
+    <!--                              ! /POR CATEGORIA                                          -->
+    <!--                              ! /CARDS RESTAURANTES                                    -->
       <hr>
+
+<!--todo: Postagens: LINKS-->
+<div class="container" id="produto">
+  <nav>
+    <div class="nav nav-tabs d-flex justify-content-center my-3" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="todosProdutos" aria-selected="true">Todos produtos</a>
+
+      <!-- todo: aqui tem que por sobre restaurante -->
+      <a (click)='findByIdUsuario()' class="nav-item nav-link" id="meusProdutos-tab" data-toggle="tab" href="#meusProdutos" role="tab" aria-controls="meusProdutos" aria-selected="false">Minhas postagens</a>
+      <!-- todo: fim aqui tem que por sobre restaurante -->
+
+      <a class="nav-item nav-link" id="produtoCategoria-tab" data-toggle="tab" href="#produtoCategoria" role="tab" aria-controls="produtoCategoria" aria-selected="false">Produtos por categoria</a>
+    </div>
+  </nav>
+
+  <div class="tab-content" id="nav-tabContent">
+    <!--todo: TODAS AS POSTAGENS-->
+    <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
+      <div class="card-columns">
+        <div class="card text-center" *ngFor="let item of listaProdutos">
+          <div class="card-body">
+            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+            <h5 class="card-title m-0">{{item.nome}}</h5>
+            <small class="tema">Categoria: {{item.categoria.descricao}}</small>
+            <p class="card-text mt-2">{{item.descricao}}</p>
+            <p class="card-text mt-2">R$: {{item.preco}},00</p>
+            <p class="card-text"><small class="text-muted">Publicado pelo restaurante: {{item.usuario.nome}}</small></p>
+
+            <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+            <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
+
+          </div>
+      </div>
+    </div>
+    </div>
+
+    <!--todo: MINHAS POSTAGENS-->
+    <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
+      <div class="card-columns">
+        <div class="card text-center" *ngFor="let usuario of listaUsuarios">
+          <div class="card-body" *ngIf="usuario.tipoUsuario == 'vendedor'">
+            <div *ngFor="let item of usuario.produto"> 
+            <h5 class="card-title m-0">{{item.nome}}</h5>
+            <small class="categoria">Categoria: {{item.categoria.nome}}</small>
+            <p class="card-text mt-2">{{item.descricao}}</p>
+            <p class="card-text mt-2">{{item.preco}}</p>
+              <!-- <p class="card-text"><small class="text-muted">Publicado pelo restaurante: {{item.usuario.nome}}</small></p> -->
+          <div class="d-flex justify-content-around">
+            <a [routerLink]="['/produto-edit', produto.id]" class="linkB">ATUALIZAR</a>
+            <a [routerLink]="['/produto-delete', produto.id]" class="">EXCLUIR</a>
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>
+
+    <!--todo: POSTAGENS POR TEMA-->
+    <div class="tab-pane fade" id="produtoCategoria" role="tabpanel" aria-labelledby="produtoCategoria-tab">
+
+      <div class="card-columns" *ngFor="let categoria of listaCategorias">
+        <div class="card text-center" *ngFor="let item of categoria.produto">
+          <div class="card-body">
+            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+            <h5 class="card-title m-0">{{item.nome}}</h5>
+            <p class="card-text mt-2">{{item.descricao}}</p>
+            <p class="card-text"><small class="text-muted">Publicado pelo restaurante: {{item.usuario.nome}}</small></p>
+          </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
