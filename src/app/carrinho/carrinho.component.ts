@@ -16,13 +16,13 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private carrinho: CarrinhoService,
-    private prod: ProdutoService,
-    private cat: CategoriaService,
-    private auth: AuthService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
-    
+
     window.scroll(0,0)
   }
 

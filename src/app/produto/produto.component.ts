@@ -5,6 +5,7 @@ import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
+import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -62,6 +63,7 @@ getAllProdutos(){
     this.listaProdutos = resp
   })
 }
+
 findByIdUser(){
   this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) =>{
     this.user = resp

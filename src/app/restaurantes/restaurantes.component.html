@@ -133,7 +133,7 @@
       <!-- <div class="container" *ngFor="let usuarios of listaUsuarios">
         <div *ngFor="let item of usuario.produto"> -->
         <!-- <div *ngIf="usuario.tipoUsuario == 'vendedor'"> -->
-          
+
 
           <!-- <div class="tab-pane fade" id="prodPorRestaurante" role="tabpanel" aria-labelledby="prodPorRestaurante-tab"> -->
             <!-- <div class="card text-center" style="width: 18rem;">
@@ -151,7 +151,7 @@
     </div> -->
   <!-- </div> -->
 
-        
+
 
 
 
@@ -160,8 +160,8 @@
 
     <!--                              ! POR CATEGORIA                                          -->
 
-    
-    
+
+
   </div>
 
     <!--                              ! /POR CATEGORIA                                          -->
@@ -198,6 +198,8 @@
             <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
             <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
 
+            <button class="btn btn-outline-info mt-3" (click)="getProdById(produto.id)">COMPRAR</button>
+
           </div>
       </div>
     </div>
@@ -208,7 +210,7 @@
       <div class="card-columns">
         <div class="card text-center" *ngFor="let usuario of listaUsuarios">
           <div class="card-body" *ngIf="usuario.tipoUsuario == 'vendedor'">
-            <div *ngFor="let item of usuario.produto"> 
+            <div *ngFor="let item of usuario.produto">
             <h5 class="card-title m-0">{{item.nome}}</h5>
             <small class="categoria">Categoria: {{item.categoria.nome}}</small>
             <p class="card-text mt-2">{{item.descricao}}</p>
