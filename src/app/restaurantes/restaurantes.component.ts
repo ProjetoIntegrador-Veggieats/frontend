@@ -8,6 +8,7 @@ import { ProdutoService } from '../service/produto.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Usuario } from '../model/Usuario';
 import { environment } from 'src/environments/environment.prod';
+import { CarrinhoService } from '../service/carrinho.service';
 
 @Component({
   selector: 'app-restaurantes',
@@ -32,12 +33,13 @@ export class RestaurantesComponent implements OnInit {
     public authService: AuthService,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private carrinho: CarrinhoService
   ) {}
 
   ngOnInit() {
     window.scroll(0,0);
-    
+
     this.authService.refreshToken()
     this.getAllCategorias();
     this.getAllProdutos();
@@ -67,6 +69,19 @@ export class RestaurantesComponent implements OnInit {
     this.authService.getAllUsuarios().subscribe((resp: Usuario[]) => {
       this.listaUsuarios = resp;
     });
+  }
+
+  getProdById(id: number){
+    this.produtoService.getByIdProdutos(id).subscribe((resp: Produto) =>{
+      this.produto = resp;
+      this.addProduto()
+      // this.desconto();
+      // this.parcela();
+    })
+  }
+
+  addProduto(){
+    this.carrinho.adicionar(this.produto)
   }
 
   findByIdUsuario(){
