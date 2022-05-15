@@ -1,23 +1,25 @@
-
+.texto{
+  font-size: 0.85rem;
+  color: white;
+}
 section {
-    padding: 60px 0;
-    min-height: 100vh;
+  padding: 60px 0;
+  min-height: 100vh;
 }
 a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    outline: none;
+  text-decoration: none;
+  outline: none;
+  color: var(--laranjaPadrao);
 }
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
 .main-footer{
   position: relative;
   background: var(--marromPadrao);
 }
-
 .footer-content{
   position: relative;
   padding: 85px 0px 80px 0px;
@@ -26,77 +28,29 @@ ul {
   position: absolute;
   content: '';
   background-image: url('../../assets/img/fazendaLogo.png');
-  width: 400px;
-  height: 365px;
-  top: 250px;
-  right: 200px;
+  width: 300px;
+  height: 300px;
+  top: 180px;
+  right: 250px;
   background-size: cover;
-  background-repeat: no-repeat;
-  animation-name: float-bob;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  -webkit-animation-name: float-bob;
-  -ms-animation-name: float-bob;
-  -ms-animation-duration: 30s;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
-  -o-animation-name: float-bob;
-  -o-animation-duration: 30s;
-  -o-animation-iteration-count: infinite;
-  -o-animation-timing-function: linear;
-}
-.footer-content .logo-widget{
-  position: relative;
-  margin-top: -5px;
-}
-.footer-content .logo-widget .footer-social li{
-  position: relative;
-  display: inline-block;
-  margin-right: 9px;
-}
-.footer-content .logo-widget .footer-social li:last-child{
-  margin-right: 0px;
-}
-.footer-content .logo-widget .footer-social li a{
-  position: relative;
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  line-height: 42px;
-  background: #004cff;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 50%;
-}
-
-/* --------- HOVER DO FOOTER REDE SOCIAL !!! --------- */
-.footer-content .logo-widget .footer-social li a:hover{
-  font-size: 1.65rem;
-  transform: translate3d(0, 3px, 0);
-}
-.footer-content .logo-widget .logo-box{
-  margin-bottom: 25px;
 }
 
 /* --------- ESCRITA EMBAIXO DO LOGO --------- */
 .footer-content .logo-widget .text p{
   color: #ffffff;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
 }
 
 .footer-content .footer-title{
   position: relative;
-  font-size: 24px;
-  line-height: 35px;
-  font-family: 'Fredoka One', cursive, serif;
+  font-size: 20px;
+  font-family: 'Fredoka One';
   color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 27px;
+  margin-bottom: 15px;
 }
 .footer-content .service-widget .list li{
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 /* --------- LISTA DO SERVIÇO --------- */
 .footer-content .service-widget .list li a{
@@ -105,27 +59,27 @@ ul {
   color: #ffffff;
 }
 .footer-content .service-widget .list li a:hover{
-  color: #ff5e14;
+  color: var(--laranjaPadrao);
 }
 
 /* --------- LISTA DO CONTATO --------- */
 .footer-content .contact-widget p{
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 1px;
 }
 .footer-content .contact-widget{
   margin-left: 90px;
 }
 .footer-content .contact-widget .footer-title{
-  margin-bottom: 29px;
+  margin-bottom: 12px;
 }
-
 /** --------- BOTÕES DO FOOTER!!! --------- **/
 
-.footer-bottom{
+.footer{
   position: relative;
   background: #413a2d;
-  padding: 25px 0px 22px 0px;
+  padding: 25px 0px 25px 30px;
+  color: white;
 }
 .footer-bottom .copyright,
 .footer-bottom .copyright a,
@@ -135,7 +89,7 @@ ul {
 }
 .footer-bottom .copyright a:hover,
 .footer-bottom .footer-nav li a:hover{
-  color: #ff5e14;
+  color: var(--laranjaPadrao);
 }
 .footer-bottom .footer-nav{
   position: relative;
@@ -144,7 +98,7 @@ ul {
 .footer-bottom .footer-nav li{
   position: relative;
   display: inline-block;
-  margin-left: 29px;
+  margin-left: 20px;
 }
 .footer-bottom .footer-nav li:first-child{
   margin-left: 0px;
@@ -162,5 +116,46 @@ ul {
   display: none;
 }
 .logo-box img {
-    max-width: 220px;
+ margin-left: 100px;
+}
+
+/* REDE SOCIAIS  */
+button:hover{
+  font-size: 1.25rem;
+  transform: translate3d(0, 3px, 0);
+}
+a{
+  color: white;
+}
+button{
+  padding: 0.50rem 1rem;
+  border: unset;
+  border-radius: 2em;
+  color: #212121;
+  z-index: 1;
+  background: var(--verdePadrao);
+  position: relative;
+  font-size: 1.50rem;
+  transition: all 250ms;
+  overflow: hidden;
+}
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 30em;
+  background-color: var(--roxoPadrao);
+  z-index: -1;
+  transition: all 250ms
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
 }
