@@ -41,16 +41,15 @@ export class AuthService {
 
   getAllUsuarios(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://veggieats.herokuapp.com/usuario/all', this.token)
-  
+
     }
 
   logado(){
     let ok: boolean = false
-
     if(environment.token != ""){
       ok=true
     }
-
     return ok
   }
+
 }

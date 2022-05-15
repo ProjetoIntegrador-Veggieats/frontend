@@ -28,8 +28,8 @@ ul {
   background-image: url('../../assets/img/fazendaLogo.png');
   width: 400px;
   height: 365px;
-  top: 50px;
-  right: -385px;
+  top: 250px;
+  right: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   animation-name: float-bob;
