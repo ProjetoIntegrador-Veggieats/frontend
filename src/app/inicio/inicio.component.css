@@ -1,12 +1,21 @@
 /* --CSS DA NAVBAR-- */
 .fs-16{
-  font-size: 16pt;
+  font-size: 15pt;
 }
 
-.verde{
+.verde, span{
+border-radius: 1rem;
 background-color:  #579d18;
+color: white;
+padding: 3px;
 }
+.corroxo{
+  color: var(--roxoPadrao);
+}
+.corMarrom{
+  color: var(--marromPadrao)
 
+}
 .card-carrosel{
 height: 600.99px;
 width: 1110px;
@@ -18,7 +27,7 @@ display:flex;
 }
 .clicavel {
   cursor: pointer;
-  background-color: var(--larajaClaro);
+  background-color: var(--larajaPadrao);
   padding: 15px;
 }
 .clicavel:hover{
@@ -32,4 +41,52 @@ display:flex;
 }
 .lead{
   font-size: 15px;
+}
+
+
+
+button:hover{
+  font-size: 0.70rem;
+  transform: translate3d(0, 1px, 0);
+}
+a{
+  cursor: pointer;
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+}
+/* From uiverse.io by @alexroumi */
+button{
+  padding: 0.50rem 0.75rem;
+  border: unset;
+  border-radius: 2em;
+  color: #212121;
+  z-index: 1;
+  background: var(--roxoClaro);
+  position: relative;
+  font-size: 0.75rem;
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 30em;
+  background-color: var(--verdePadrao);
+  z-index: -1;
+  transition: all 250ms
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
 }

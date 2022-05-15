@@ -79,5 +79,8 @@ export class InicioComponent implements OnInit {
       this.getAllProdutos()
     })
   }
+  enviar(){
+    alert('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
+  }
 
 }
