@@ -31,17 +31,17 @@ export class ProdutoEditComponent implements OnInit {
     window.scroll(0,0)
     if(environment.token==''){
       alert("Sua sessão expirou")
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/login'])
     }
     let id=this.route.snapshot.params['id']
     this.findByIdProduto(id)
     this.findAllCategorias()
 
     this.produtoService.refreshToken()
-    
+
   }
 
-  
+
 
   findByIdProduto(id:number){
     this.produtoService.getByIdProdutos(id).subscribe((resp:Produto)=>{

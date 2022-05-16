@@ -28,7 +28,7 @@
 
         <div class="form-row">
           <div class="col">
-            <label for="texto"></label>
+            <label for="descricao"></label>
             <textarea
               [(ngModel)]="produto.descricao"
               type="text"
@@ -58,6 +58,7 @@
           <div class="col">
             <label for="tipoProduto"></label>
             <select
+            [(ngModel)]="produto.tipoProduto"
               type="text"
               class="form-control"
               name="tipoProduto"
@@ -103,6 +104,7 @@
               <div class="col-md-3">
                 <label for="foto"></label>
                 <input
+                [(ngModel)]="produto.foto"
                   class="form-control"
                   type="text"
                   name="foto"
@@ -163,12 +165,13 @@
               <td class="d-flex justify-content-end">
                 <button
                   class="btn btn-outline-secondary mr-3"
-                  [routerLink]="['/produto-edit', item.id]">
-                  Editar
+                  [routerLink]="['/produto-edit', item.id]"
+                >Editar
                 </button>
                 <button
                   class="btn btn-outline-danger"
-                  [routerLink]="['/produto-delete', item.id]">
+                  [routerLink]="['/produto-delete', item.id]"
+                >
                   Apagar
                 </button>
               </td>

@@ -26,10 +26,10 @@ export class ProdutoDeleteComponent implements OnInit {
   ngOnInit() {
 
     window.scroll(0,0)
-    
+
     if(environment.token==''){
       alert("Sua sessão expirou")
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/login'])
     }
     this.idPost=this.route.snapshot.params['id']
     this.findByIdproduto(this.idPost)
