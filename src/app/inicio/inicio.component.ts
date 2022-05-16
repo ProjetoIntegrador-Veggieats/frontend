@@ -9,7 +9,6 @@ import { CategoriaService } from '../service/categoria.service';
 import { AuthService } from '../service/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -28,8 +27,8 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private router:Router,
-    private produtoService:ProdutoService,
     private categoriaService:CategoriaService,
+    private produtoService:ProdutoService,
     private authService:AuthService,
     private route: ActivatedRoute
     ) { }

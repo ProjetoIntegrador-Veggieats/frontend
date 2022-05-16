@@ -163,13 +163,12 @@
               <td class="d-flex justify-content-end">
                 <button
                   class="btn btn-outline-secondary mr-3"
-                  [routerLink]="['/produto-edit', item.id]"
-                >Editar
+                  [routerLink]="['/produto-edit', item.id]">
+                  Editar
                 </button>
                 <button
                   class="btn btn-outline-danger"
-                  [routerLink]="['/produto-delete', item.id]"
-                >
+                  [routerLink]="['/produto-delete', item.id]">
                   Apagar
                 </button>
               </td>
@@ -180,121 +179,3 @@
     </div>
   </div>
 </div>
-
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="row d-flex justify-content-center">
-        <div class="col-md-3">
-          <div class="form-group">
-            <input
-              [(ngModel)]="produto.nome"
-              type="text"
-              class="form-control mt-3"
-              id="nome"
-              placeholder="Digite o nome do produto"
-            />
-            <div class="form-group">
-              <label for="texto">Descrição</label>
-              <textarea
-                [(ngModel)]="produto.descricao"
-                name="texto"
-                class="form-control"
-                id="texto"
-                rows="3"
-                placeholder="Digite aqui o que contem no seu produto..."
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <input
-                [(ngModel)]="produto.foto"
-                type="text"
-                class="form-control mt-3"
-                id="foto"
-                placeholder="Digite a URL da foto do produto"
-              /.
-
-            </div>
-            <div class="form-group">
-              <label for="texto">Selecione o tipo de produto:</label>
-              <select
-                class="form-control"
-                name="tipoProduto"
-                id="tipoProduto"
-                [(ngModel)]="produto.tipoProduto"
-                >
-                 <option
-                  >Selecione uma opção</option>
-                  <option
-                  value="vegano"> Vegano</option>
-                  <option
-                  value="vegetariano"> Vegetariano</option>
-
-
-
-              </select>
-            </div>
-            <div class="form-group">
-              <input
-                [(ngModel)]="produto.estoque"
-                type="text"
-                class="form-control mt-3"
-                id="estoque"
-                placeholder="Digite a quantidade no estoque"
-              />
-            </div>
-            <div class="form-group">
-              <input
-                [(ngModel)]="produto.preco"
-                type="text"
-                class="form-control mt-3"
-                id="preco"
-                placeholder="Digite o preço do produto"
-              />
-            </div>
-            <div class="form-group">
-              <label for="texto">Escolha uma categoria</label>
-              <select
-                class="form-control"
-                name="categoria"
-                id="categoria"
-                [(ngModel)]="idCategoria"
-                (change)="findByIdCategoria()"
-              >
-                <option
-                  *ngFor="let item of listaCategorias"
-                  value="{{ item.id }}"
-                >
-                  {{ item.nome }}
-                </option>
-              </select>
-            </div>
-            <div class="d-flex justify-content-center mb-3">
-              <button class="btn btn-light" (click)="publicar()">
-                Cadastrar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--  -->
-

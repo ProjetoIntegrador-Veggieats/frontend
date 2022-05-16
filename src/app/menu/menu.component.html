@@ -27,22 +27,24 @@
           </li>
           </ul>
 <!-- USUÁRIO ENTRAR / INFO DO USUÁRIO -->
-      <ul class="navbar-nav d-flex ml-auto align-items-center">
-        <div class="col-6 d-flex justify-content-center m-0 p-0" *ngIf="!auth.logado()">
-            <div class="d-flex align-items-center">
-              <div class="p-0 mr-2">
-                <button class=" ml-2" routerLink="/login">Entrar</button>
+      <!-- <ul class="navbar-nav d-flex ml-auto align-items-center"> -->
+        <ul class="navbar-nav d-flex ml-auto align-items-center" >
+          <div class="col-6 d-flex justify-content-center m-0 p-0" *ngIf="auth.logado()">
+              <div class="d-flex align-items-center">
+                <div class="p-0 mr-2">
+                  <button class=" ml-2" routerLink="/login">Entrar</button>
+                </div>
+                <div class=" mr-2">
+                </div>
+                <div class="p-0">
+                  <button class=" btn-block mr-5" routerLink="/login">Criar conta</button>
+                </div>
               </div>
-              <div class=" mr-2">
-              </div>
-              <div class="p-0">
-                <button class=" btn-block mr-5" routerLink="/login">Criar conta</button>
-              </div>
-            </div>
-      </div>
-      </ul>
+          </div>
+        </ul>
+      <!-- </ul> -->
 
-      <div class="col-2 d-flex justify-content-center align-items-center p-0" *ngIf="auth.logado()">
+      <div class="col-2 d-flex justify-content-center align-items-center p-0" *ngIf="!auth.logado()">
         <a class="nav-conta dropdown-toggle fs-16" href="#" id="navbarDropdown" role="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="https://i.imgur.com/1ENRWbA.jpg" onerror="this.src = 'assets/img/logo.jpg'"
