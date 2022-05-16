@@ -12,29 +12,28 @@
 </div>
 <!--                               /! CARROSSEL INICIAL                           -->
 
-<!--                              ! BARRA DE PESQUISA                                       -->
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <div class="row d-flex justify-content-center  align-items-center">
-        <div class="col-md-7">
-          <div class="form-group mb-5 mt-5">
-            <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite para pesquisar" [(ngModel)]="nomeProduto"
-            (keyup)="findByTituloProduto()">
+
+      <!--                              ! BARRA DE PESQUISA                                       -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="row d-flex justify-content-center  align-items-center">
+            <div class="col-md-5">
+              <div class="form-group mb-5 mt-5">
+                <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite para pesquisar" [(ngModel)]="nomeProduto"
+                (keyup)="findByTituloProduto()">
+              </div>
+            </div>
+            <div class="col-md-2 mb-2 mt-2 text-end">
+              <img src="https://i.imgur.com/A1ddOPs.png" alt="" class="img-fluid">
+            </div>
           </div>
         </div>
-        <div class="col-md-2 mb-2 mt-2 text-end">
-          <img src="https://i.imgur.com/A1ddOPs.png" alt="" class="img-fluid">
-        </div>
       </div>
-    </div>
-  </div>
-<!--                              /! BARRA DE PESQUISA                                       -->
-
-
+    <!--                              /! BARRA DE PESQUISA                                       -->
 
 <!--                              !FILTRAGEM DE PRODUTOS                                   -->
 
-<div class="container">
+<!-- <div class="container">
 
 	<div class="row" id="filter" class="d-flex justify-content-around">
 		<form class="form-row">
@@ -54,135 +53,116 @@
 
     </form>
   </div>
-</div>
+</div> -->
 
 
                     <!--todo: Postagens: LINKS-->
-<div class="container form-row" id="produto">
-  <nav>
+<div class="container d-flex justify-content-center" id="produto">
 
-    <div class="nav nav-tabs d-flex justify-content-center my-3 form-group" id="nav-tab" role="tablist">
-      <button class="nav-item nav-link active form-control" id="todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="todosProdutos" aria-selected="true">Todos produtos</button>
+    <div class="nav nav-tabs d-flex form-group" id="nav-tab" role="tablist">
+      <button class="nav-item nav-link active" id="todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="todosProdutos" aria-selected="true">Todos os produtos</button>
 
                 <!-- todo: aqui tem que por sobre restaurante -->
-
-      <button (click)='getAllUsuarios()' class="nav-item nav-link form-control" id="meusProdutos-tab" data-toggle="tab" href="#meusProdutos" role="tab" aria-controls="meusProdutos" aria-selected="false">Minhas postagens</button>
+      <button (click)='getAllUsuarios()' class="nav-item nav-link" id="meusProdutos-tab" data-toggle="tab" href="#meusProdutos" role="tab" aria-controls="meusProdutos" aria-selected="false">Produtos por Restaurantes</button>
 
                 <!-- todo: fim aqui tem que por sobre restaurante -->
-
-      <button class="nav-item nav-link form-control" id="produtoCategoria-tab" data-toggle="tab" href="#produtoCategoria" role="tab" aria-controls="produtoCategoria" aria-selected="false">Produtos por categoria</button>
-
+      <button class="nav-item nav-link" id="produtoCategoria-tab" data-toggle="tab" href="#produtoCategoria" role="tab" aria-controls="produtoCategoria" aria-selected="false">Produtos por Categoria</button>
     </div>
+  </div>
 
-  </nav>
-<div class="tab-content" id="nav-tabContent">
+
 
 <!--                              /!FILTRAGEM DE PRODUTOS                                   -->
 
 
 
 <!--                              ! CARDS RESTAURANTES                                          -->
-    <div class="tab-content mt-5 container-fluid d-flex justify-content-around" id="nav-tabContent">
-
+<div class="tab-content mt-5 container-fluid d-flex justify-content-center" id="nav-tabContent">
 <!--                              ! TODOS OS PRODUTOS
 
-    <!--todo: TODAS AS POSTAGENS-->
+    <!--todo: TODAS OS PRODUTOS-->
 
-    <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
-      <div class="card-columns">
+    <!-- <div class="container"> -->
+      <div class="tab-pane fade show active container" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
+        <div class="card-columns">
+          <div class="card text-center" *ngFor="let item of listaProdutos">
+            <img src="{{item.usuario.foto}}"  class="mt-3"width="70px"  alt="Imagem do produto">
+            <div class="card-body">
+              <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+              <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
+              <small class="tema">{{item.usuario.nome}}</small>
+              <p class="card-text mt-2">{{item.descricao}}</p>
+              <p class="card-text mt-2">R$: {{item.preco}}</p>
+              <p class="card-text"><small class="text-muted"> Categoria: {{item.categoria.nome}}</small></p>
 
-        <div class="card text-center" *ngFor="let item of listaProdutos">
-          <div class="card-body">
-            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
-            <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
-            <small class="tema">{{item.usuario.nome}}</small>
-            <p class="card-text mt-2">{{item.descricao}}</p>
-            <p class="card-text mt-2">R$: {{item.preco}}</p>
-            <p class="card-text"><small class="text-muted"> Categoria: {{item.categoria.nome}}</small></p>
+              <a [routerLink]="['/produto-edit', produto.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+              <a [routerLink]="['/produto-delete', produto.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
 
-            <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
-            <a [routerLink]="['/produto-delete', usuario.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
+              <button class="btn btn-outline-info mt-3" (click)="getProdById(item.id)">COMPRAR</button>
 
-            <button class="btn btn-outline-info mt-3" (click)="getProdById(item.id)">COMPRAR</button>
-
-          </div>
-      </div>
-    </div>
-    </div>
-
-
-    <!-- <div class="container" >
-      <div class="row">
-        <div class="col-md-3">
-        <div class="tab-pane fade" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
-          <div class="card-columns d-flex justify-content-center" *ngFor="let item of listaProdutos">
-          <div class="card text-center" style="width: 18rem;">
-            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
-              <div class="card-body">
-                <h5 class="card-title">{{item.nome}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{item.usuario.nome}}</h6>
-                <p class="card-text">{{item.descricao}}</p>
-                <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
-                <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
-              </div>
             </div>
+
           </div>
         </div>
-      </div></div>
-      </div> -->
+      </div>
+    <!-- </div> -->
 
 
-      <!--                              /! TODOS OS PRODUTOS                                      -->
 
 
       <!--                              ! POR RESTAURANTE             -->
 
 
-    <!--todo: MINHAS POSTAGENS-->
-    <div class="tab-pane fade" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
-      <div class="card-columns">
-        <!-- <div class="card text-center" *ngFor="let usuario of listaUsuarios"> -->
-          <div class="card-body" *ngIf="usuario.tipoUsuario == 'vendedor'"> -->
-             <div *ngFor="let item of listaProdutos">
-              <h5 class="card-title m-0">{{usuario.nome}}</h5>
+    <!--todo: MEUS PRODUTOS-->
+    <div class="tab-pane fade container" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
+
+      <!-- <ng-template [ngIf]="isLoggedIn" [ngIfElse]="userLoggedOut">
+        <div>
+          Bem vindo! Você está logado.
+        </div>
+      </ng-template>
+
+      <ng-template #userLoggedOut>
+        <div>
+          Por favor, faça o login.
+        </div>
+      </ng-template> -->
+
+
+      <div *ngIf="listaProdutos !==[]">
+        <div *ngFor="let usuario of listaUsuarios" class="m-0">
+        <div *ngIf="usuario.tipoUsuario === 'vendedor'" class="p-0">
+          <div class="d-flex justify-content-center mt-2 mb-2">
+            <img src="{{usuario.foto}}" width="70px">
+          </div>
+            <div class="card">
+            <div class="card text-center" >
+            <div class="card-body">
+            <div *ngFor="let item of usuario.produto" class="d-flex align-items-center justify-content-around">
+              <img src="{{item.foto}}" width="250px" class="mb-3"  alt="Imagem do produto">
             <h5 class="card-title m-0">{{item.nome}}</h5>
             <small class="categoria">Categoria: {{item.categoria.nome}}</small>
             <p class="card-text mt-2">{{item.descricao}}</p>
-            <p class="card-text mt-2">{{item.preco}}</p>
-              <p class="card-text"><small class="text-muted">Publicado pelo restaurante: {{item.usuario.nome}}</small></p>
-          <div class="d-flex justify-content-around">
-            <a [routerLink]="['/produto-edit', produto.id]" class="linkB">ATUALIZAR</a>
-            <a [routerLink]="['/produto-delete', produto.id]" class="">EXCLUIR</a>
+            <p class="card-text mt-2">R$: {{item.preco}},00</p>
+            <div class="d-flex justify-content-around">
+
+
+              <!-- !ISSO AQUI EMBAIXO TEM QUE COLOCAR NO ATUALIZAR PRODUTO -->
+            <!-- <a [routerLink]="['/produto-edit', produto.id]" class="linkB">ATUALIZAR</a>
+            <a *ngIf="usuario.id == usuario.id" [routerLink]="['/produto-delete', produto.id]" class="">EXCLUIR</a> -->
+
           </div>
           </div>
           </div>
-      </div>
+          </div>
+          </div>
+          </div>
+      <div *ngIf="usuario.produto === []">
+
+</div>
+
+
     </div>
-    <!-- </div> -->
-
-
-
-      <!-- <div class="container" *ngFor="let usuarios of listaUsuarios">
-        <div *ngFor="let item of usuario.produto"> -->
-        <!-- <div *ngIf="usuario.tipoUsuario == 'vendedor'"> -->
-
-
-          <!-- <div class="tab-pane fade" id="prodPorRestaurante" role="tabpanel" aria-labelledby="prodPorRestaurante-tab"> -->
-            <!-- <div class="card text-center" style="width: 18rem;">
-              <img src="{{usuario.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
-              <div class="card-body">
-                <h5 class="card-title">{{usuario.nome}}</h5>
-                <! <h6 class="card-subtitle mb-2 text-muted">{{usuario.usuario.nome}}</h6>
-                <p class="card-text">{{usuario.descricao}}</p> -->
-                <!-- <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
-                <a [routerLink]="['/produto-edit', usuario.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a> -->
-            <!-- </div>
-          </div> -->
-        <!-- </div>
-      </div>
-    </div> -->
-  <!-- </div> -->
-
 
     <!--                              ! /POR RESTAURANTE                                          -->
 
@@ -190,7 +170,8 @@
     <!--                              ! POR CATEGORIA                                          -->
 
         <!--todo: POSTAGENS POR TEMA-->
-    <div class="tab-pane fade" id="produtoCategoria" role="tabpanel" aria-labelledby="produtoCategoria-tab">
+
+    <div class="tab-pane fade container" id="produtoCategoria" role="tabpanel" aria-labelledby="produtoCategoria-tab">
 
       <div class="card-columns" *ngFor="let categoria of listaCategorias">
         <div class="card text-center" *ngFor="let item of categoria.produto">
@@ -204,14 +185,7 @@
     </div>
 
     </div>
-  </div>
+
+<!--                                      /POR CATEGORIA                                     -->
 </div>
-
-
-    <!--                              ! /POR CATEGORIA                                          -->
-    <!--                              ! /CARDS RESTAURANTES                                    -->
-      <hr>
-      </div>
-
-
-
+<!--                            /CARDS RESTAURANTES -->

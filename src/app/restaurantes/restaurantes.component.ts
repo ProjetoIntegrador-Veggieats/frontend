@@ -97,11 +97,8 @@ export class RestaurantesComponent implements OnInit {
         this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp: Produto[]) =>{
           this.listaProdutos = resp
     })
-    }
-
-
-
   }
+}
 
 
   customOptions: OwlOptions = {
