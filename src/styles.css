@@ -13,3 +13,14 @@
 }
 .fredoka{
     font-family: 'Fredoka One', cursive;}
+/*Para dispositivos com width menor que 768px*/
+body {
+  padding-top: 100px;
+}
+
+/*Para dispositivos com width maior ou igual a 768px*/
+@media (min-width: 768px) {
+ body {
+     padding-top: 100px;
+  }
+}

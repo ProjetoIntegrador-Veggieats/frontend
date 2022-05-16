@@ -1,60 +1,61 @@
-<!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-light bg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+  <!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-light bg fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 <!-- LOGO VEGGIEATS -->
-      <ul class="navbar-nav d-flex align-items-center justify-content-center">
-        <li class="nav-item active">
-          <img src="https://i.imgur.com/fxDLdT1.png"  alt="Logo Veggieats"  width="200">
-            </li>
-          </ul>
-<!-- LISTA DE ITENS -->
-      <ul class="navbar-nav d-flex align-items-center ml-auto">
-        <li class="nav-item active p-1 fredoka">
-        <a class="nav-verde" href="#" routerLink='/inicio'>INÍCIO<span class="sr-only">(página atual)</span></a>
+    <ul class="navbar-nav d-flex align-items-center justify-content-center">
+      <li class="nav-item active">
+        <img src="https://i.imgur.com/fxDLdT1.png"  alt="Logo Veggieats"  width="200">
           </li>
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
-          </li>
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink="/sobre">SOBRE NÓS</a>
-          </li>
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink="contato">CONTATO</a>
-          </li>
-          </ul>
-<!-- USUÁRIO ENTRAR / INFO DO USUÁRIO -->
-      <!-- <ul class="navbar-nav d-flex ml-auto align-items-center"> -->
-        <ul class="navbar-nav d-flex ml-auto align-items-center" >
-          <div class="col-6 d-flex justify-content-center m-0 p-0" *ngIf="!auth.logado()">
-              <div class="d-flex align-items-center">
-                <div class="p-0 mr-2">
-                  <button class=" ml-2" routerLink="/login">Entrar</button>
-                </div>
-                <div class=" mr-2">
-                </div>
-                <div class="p-0">
-                  <button class=" btn-block mr-5" routerLink="/login">Criar conta</button>
-                </div>
-              </div>
-          </div>
         </ul>
-      <!-- </ul> -->
+<!-- LISTA DE ITENS -->
+    <ul class="navbar-nav d-flex align-items-center ml-auto">
+      <li class="nav-item active p-1 fredoka">
+      <a class="nav-verde" href="#" routerLink='/inicio'>INÍCIO<span class="sr-only">(página atual)</span></a>
+        </li>
+        <li class="nav-item p-1 fredoka">
+          <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
+        </li>
+        <li class="nav-item p-1 fredoka">
+          <a class="nav-verde" href="#" routerLink="/sobre">SOBRE NÓS</a>
+        </li>
+        <li class="nav-item p-1 fredoka">
+          <a class="nav-verde" href="#" routerLink="contato">CONTATO</a>
+        </li>
+        </ul>
+<!-- USUÁRIO ENTRAR / INFO DO USUÁRIO -->
+    <!-- <ul class="navbar-nav d-flex ml-auto align-items-center"> -->
+      <ul class="navbar-nav d-flex ml-auto align-items-center" >
+        <div class="col-6 d-flex justify-content-center m-0 p-0" *ngIf="!auth.logado()">
+            <div class="d-flex align-items-center">
+              <div class="p-0 mr-2">
+                <button class=" ml-2" routerLink="/login">Entrar</button>
+              </div>
+              <div class=" mr-2">
+              </div>
+              <div class="p-0">
+                <button class=" btn-block mr-5" routerLink="/login">Criar conta</button>
+              </div>
+            </div>
+        </div>
+      </ul>
+    <!-- </ul> -->
 
-      <div class="col-2 d-flex justify-content-center align-items-center p-0" *ngIf="auth.logado()">
-        <a class="nav-conta dropdown-toggle fs-16" href="#" id="navbarDropdown" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="https://i.imgur.com/1ENRWbA.jpg" onerror="this.src = 'assets/img/logo.jpg'"
-            alt="imagem do usuario" class="rounded-circle mr-2" width="35">
-              </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#"routerLink="/login">MEUS DADOS</a>
-          <div class="dropdown-divider"></div>
-          <a (click)="sair()" class="dropdown-item" href="#"routerLink="/login">SAIR</a>
-      </div>
+    <div class="col-2 d-flex justify-content-center align-items-center p-0" *ngIf="auth.logado()">
+      <a class="nav-conta dropdown-toggle fs-16" href="#" id="navbarDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="https://i.imgur.com/1ENRWbA.jpg" onerror="this.src = 'assets/img/logo.jpg'"
+          alt="imagem do usuario" class="rounded-circle mr-2" width="35">
+            </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#"routerLink="/login">MEUS DADOS</a>
+        <div class="dropdown-divider"></div>
+        <a (click)="sair()" class="dropdown-item" href="#"routerLink="/login">SAIR</a>
     </div>
-    </div>
-  </nav>
+  </div>
+  </div>
+</nav>
