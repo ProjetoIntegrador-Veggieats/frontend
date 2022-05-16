@@ -95,8 +95,8 @@
               <p class="card-text mt-2">R$: {{item.preco}}</p>
               <p class="card-text"><small class="text-muted"> Categoria: {{item.categoria.nome}}</small></p>
 
-              <a [routerLink]="['/produto-edit', produto.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
-              <a [routerLink]="['/produto-delete', produto.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
+              <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+              <a [routerLink]="['/produto-delete', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
 
               <button class="btn btn-outline-info mt-3" (click)="getProdById(item.id)">COMPRAR</button>
 
