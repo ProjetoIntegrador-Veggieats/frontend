@@ -42,7 +42,10 @@ display:flex;
 .lead{
   font-size: 15px;
 }
-
+.bt{
+  background-color: var(--verdePadrao);
+  padding: 0.50rem 0.75rem;
+}
 
 
 button:hover{
