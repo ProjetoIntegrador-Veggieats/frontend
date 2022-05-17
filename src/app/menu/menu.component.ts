@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   nome: string = environment.nome
-  foto: string = environment.foto
+  foto = environment.foto
   idUser: number = environment.id
   login: boolean = true
   id = environment.id

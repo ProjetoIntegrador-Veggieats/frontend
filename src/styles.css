@@ -20,7 +20,7 @@ body {
 
 /*Para dispositivos com width maior ou igual a 768px*/
 @media (min-width: 768px) {
- body {
-     padding-top: 100px;
+body {
+    padding-top: 100px;
   }
 }
