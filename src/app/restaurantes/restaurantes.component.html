@@ -19,7 +19,7 @@
           <div class="row d-flex justify-content-center  align-items-center">
             <div class="col-md-5">
               <div class="form-group mb-5 mt-5">
-                <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite para pesquisar" [(ngModel)]="nomeProduto"
+                <input [(ngModel)]="nomeProduto" type="text" class="form-control" id="tituloPesquisa" placeholder="Digite para pesquisar"
                 (keyup)="findByTituloProduto()">
               </div>
             </div>
@@ -57,7 +57,7 @@
 
 
                     <!--todo: Postagens: LINKS-->
-<div class="container d-flex justify-content-center" id="produto">
+<div class="container d-flex justify-content-center mb-5" id="produto">
 
     <div class="nav nav-tabs d-flex form-group" id="nav-tab" role="tablist">
       <button class="nav-item nav-link active" id="todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="todosProdutos" aria-selected="true">Todos os produtos</button>
@@ -77,99 +77,72 @@
 
 
 <!--                              ! CARDS RESTAURANTES                                          -->
-<div class="tab-content mt-5 container-fluid d-flex justify-content-center" id="nav-tabContent">
+<div class="tab-content mt-4 container d-flex justify-content-center" id="nav-tabContent">
 <!--                              ! TODOS OS PRODUTOS
 
     <!--todo: TODAS OS PRODUTOS-->
 
     <!-- <div class="container"> -->
-      <div class="tab-pane fade show active container" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
+      <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="todosProdutos-tab">
+
         <div class="card-columns">
           <div class="card text-center" *ngFor="let item of listaProdutos">
-            <img src="{{item.usuario.foto}}"  class="mt-3"width="70px"  alt="Imagem do produto">
+            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
             <div class="card-body">
-              <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
               <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
-              <small class="tema">{{item.usuario.nome}}</small>
+              <p class="card-text"><small class="text-muted">{{item.usuario.nome}}</small></p>
               <p class="card-text mt-2">{{item.descricao}}</p>
-              <p class="card-text mt-2">R$: {{item.preco}}</p>
-              <p class="card-text"><small class="text-muted"> Categoria: {{item.categoria.nome}}</small></p>
+              <p class="card-text mt-2"><small class="text-muted">{{item.categoria.nome}}</small></p>
+              <p class="card-text mt-3">R$: {{item.preco}},00</p>
 
-              <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
-              <a [routerLink]="['/produto-delete', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a>
+              <!-- <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
+              <a [routerLink]="['/produto-delete', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a> -->
 
-              <button class="btn btn-outline-info mt-3" (click)="getProdById(item.id)">COMPRAR</button>
+              <a class="btn mt-3 w-100" (click)="getProdById(item.id)"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
 
             </div>
 
           </div>
         </div>
       </div>
-    <!-- </div> -->
+
 
 
 
 
       <!--                              ! POR RESTAURANTE             -->
+      <div class="tab-pane fade show active container" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
 
 
-    <!--todo: MEUS PRODUTOS-->
-    <div class="tab-pane fade container" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
-
-      <!-- <ng-template [ngIf]="isLoggedIn" [ngIfElse]="userLoggedOut">
-        <div>
-          Bem vindo! Você está logado.
-        </div>
-      </ng-template>
-
-      <ng-template #userLoggedOut>
-        <div>
-          Por favor, faça o login.
-        </div>
-      </ng-template> -->
+            <!-- <div class="row bg-danger mb-1" *ngFor="let usuario of listaUsuarios">
+              <div class="col-md-3 bg-info" *ngIf="usuario.tipoUsuario === 'vendedor'">
+                <img src="{{usuario.foto}}" alt="Logo do restaurante" width="200px">
+              </div>
+            </div> -->
 
 
-      <div *ngIf="listaProdutos !==[]">
-        <div *ngFor="let usuario of listaUsuarios" class="m-0">
-        <div *ngIf="usuario.tipoUsuario === 'vendedor'" class="p-0">
-          <div class="d-flex justify-content-center mt-2 mb-2">
-            <img src="{{usuario.foto}}" width="70px">
-          </div>
-            <div class="card">
-            <div class="card text-center" >
-            <div class="card-body">
-            <div *ngFor="let item of usuario.produto" class="d-flex align-items-center justify-content-around">
-              <img src="{{item.foto}}" width="250px" class="mb-3"  alt="Imagem do produto">
-            <h5 class="card-title m-0">{{item.nome}}</h5>
-            <small class="categoria">Categoria: {{item.categoria.nome}}</small>
+                                  <!-- GERADOR DE CARDS! -->
+      <div class="card-columns" *ngFor="let usuario of listaUsuarios">
+        <div class="card text-center" *ngFor="let item of usuario.produto" >
+          <img src="{{usuario.foto}}"  class="mt-3"width="70px"  alt="Imagem do produto">
+          <div class="card-body" *ngIf="usuario.tipoUsuario === 'vendedor'">
+            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+            <h5 class="card-title m-3">{{item.nome}}</h5>
             <p class="card-text mt-2">{{item.descricao}}</p>
+            <p class="card-text"><small class="text-muted">{{item.categoria.nome}}</small></p>
             <p class="card-text mt-2">R$: {{item.preco}},00</p>
-            <div class="d-flex justify-content-around">
-
-
-              <!-- !ISSO AQUI EMBAIXO TEM QUE COLOCAR NO ATUALIZAR PRODUTO -->
-            <!-- <a [routerLink]="['/produto-edit', produto.id]" class="linkB">ATUALIZAR</a>
-            <a *ngIf="usuario.id == usuario.id" [routerLink]="['/produto-delete', produto.id]" class="">EXCLUIR</a> -->
-
+            <a class="btn mt-3 w-100" (click)="getProdById(item.id)"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
           </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-      <div *ngIf="usuario.produto === []">
-
-</div>
-
-
+      </div>
     </div>
-
+      </div>
     <!--                              ! /POR RESTAURANTE                                          -->
+
 
 
     <!--                              ! POR CATEGORIA                                          -->
 
-        <!--todo: POSTAGENS POR TEMA-->
+        <!--todo: POSTAGENS POR Categoria-->
 
     <div class="tab-pane fade container" id="produtoCategoria" role="tabpanel" aria-labelledby="produtoCategoria-tab">
 
@@ -177,15 +150,13 @@
         <div class="card text-center" *ngFor="let item of categoria.produto">
           <div class="card-body">
             <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
-            <h5 class="card-title m-0">{{item.nome}}</h5>
+            <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
+            <p class="card-text"><small class="text-muted">{{item.usuario.nome}}</small></p>
             <p class="card-text mt-2">{{item.descricao}}</p>
-            <p class="card-text"><small class="text-muted">Publicado pelo restaurante: {{item.usuario.nome}}</small></p>
+            <p class="card-text mt-2">R$: {{item.preco}},00</p>
+            <a class="btn mt-3 w-100" (click)="getProdById(item.id)"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
           </div>
       </div>
     </div>
-
     </div>
-
-<!--                                      /POR CATEGORIA                                     -->
 </div>
-<!--                            /CARDS RESTAURANTES -->

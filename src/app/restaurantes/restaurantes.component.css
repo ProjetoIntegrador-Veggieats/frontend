@@ -21,7 +21,7 @@ p {
 .card:hover {
   color: var(--marromPadrao);
   border-color: var(--marromClaro);
-  transform: translate3d(0, 3px, 0);
+  transform: translate3d(0, -3px, 0);
 }
 
 .card {
@@ -35,4 +35,13 @@ p {
 .nav-link{
   background-color: var(--marromClaro);
   color: white;
+}
+
+i{
+  font-size: 30px;
+  color: var(--verdePadrao);
+}
+i:hover{
+  font-size: 31px ;
+  color: var(--laranjaPadrao);
 }
