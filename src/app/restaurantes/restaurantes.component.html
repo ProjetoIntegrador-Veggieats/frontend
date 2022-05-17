@@ -33,28 +33,6 @@
 
 <!--                              !FILTRAGEM DE PRODUTOS                                   -->
 
-<!-- <div class="container">
-
-	<div class="row" id="filter" class="d-flex justify-content-around">
-		<form class="form-row">
-
-
-      <div class="form-group col-sm-3 col-xs-6">
-        <button class="form-control">BOTAO</button>
-      </div>
-
-      <div class="form-group col-sm-3 col-xs-6">
-        <button class="form-control">BOTAO</button>
-      </div>
-
-      <div class="form-group col-sm-3 col-xs-6">
-        <button class="form-control">BOTAO</button>
-      </div>
-
-    </form>
-  </div>
-</div> -->
-
 
                     <!--todo: Postagens: LINKS-->
 <div class="container d-flex justify-content-center mb-5" id="produto">
@@ -111,6 +89,7 @@
 
 
       <!--                              ! POR RESTAURANTE             -->
+
       <div class="tab-pane fade show active container" id="meusProdutos" role="tabpanel" aria-labelledby="meusProdutos-tab">
 
 
@@ -124,7 +103,7 @@
                                   <!-- GERADOR DE CARDS! -->
       <div class="card-columns" *ngFor="let usuario of listaUsuarios">
         <div class="card text-center" *ngFor="let item of usuario.produto" >
-          <img src="{{usuario.foto}}"  class="mt-3"width="70px"  alt="Imagem do produto">
+          <img src="{{usuario.foto}}"  class="mt-3" width="70px"  alt="Imagem do produto">
           <div class="card-body" *ngIf="usuario.tipoUsuario === 'vendedor'">
             <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
             <h5 class="card-title m-3">{{item.nome}}</h5>
@@ -146,17 +125,28 @@
 
     <div class="tab-pane fade container" id="produtoCategoria" role="tabpanel" aria-labelledby="produtoCategoria-tab">
 
-      <div class="card-columns" *ngFor="let categoria of listaCategorias">
-        <div class="card text-center" *ngFor="let item of categoria.produto">
-          <div class="card-body">
-            <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
-            <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
-            <p class="card-text"><small class="text-muted">{{item.usuario.nome}}</small></p>
-            <p class="card-text mt-2">{{item.descricao}}</p>
-            <p class="card-text mt-2">R$: {{item.preco}},00</p>
-            <a class="btn mt-3 w-100" (click)="getProdById(item.id)"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+      <div *ngFor="let categoria of listaCategorias">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8 d-flex justify-content-center mt-3 mb-3">
+
+        <img src="{{categoria.foto}}" alt="Imagem da Categoria"  width="200px" >
           </div>
+        </div>
+
+
+        <div class="card-columns" >
+          <div class="card text-center" *ngFor="let item of categoria.produto">
+            <div class="card-body">
+              <img src="{{item.foto}}" class="card-img-top img-fluid"  alt="Imagem do produto">
+              <h5 class="card-title m-0 mt-3">{{item.nome}}</h5>
+              <p class="card-text"><small class="text-muted">{{item.usuario.nome}}</small></p>
+              <p class="card-text mt-2">{{item.descricao}}</p>
+              <p class="card-text mt-2">R$: {{item.preco}},00</p>
+              <a class="btn mt-3 w-100" (click)="getProdById(item.id)"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Usuario } from '../model/Usuario';
 import { environment } from 'src/environments/environment.prod';
 import { CarrinhoService } from '../service/carrinho.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-restaurantes',
@@ -20,6 +21,7 @@ export class RestaurantesComponent implements OnInit {
   idUsuario = environment.id
   usuario: Usuario = new Usuario()
   produto: Produto = new Produto()
+  categoria: Categoria = new Categoria()
 
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
