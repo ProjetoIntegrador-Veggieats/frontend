@@ -1,3 +1,6 @@
+p, h1{
+  color:var(--verdePadrao)
+}
 .center {
   text-align: center;
 }
@@ -41,11 +44,12 @@
 }
 
 .mb-50{
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 
 /*Estilos da pagina contato.html */
+
 
 .ml-50{
   margin-left: 50px;

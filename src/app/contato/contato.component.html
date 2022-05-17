@@ -1,17 +1,22 @@
-<div class="container fredoka">
+<div>
 
 
-  <div class="container  mb-5">
+  <div class="montserrat container mt-5 ">
 
     <div>
-      <h1 class="text-center mb-5">Entre em contato</h1>
-      <p class="mb-5 text-center">uabafae</p>
+      <h1 class="container fredoka text-center mb-5">Entre em contato</h1>
+      <p class="mb-50 text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+        has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+        PageMaker including versions of Lorem Ipsum.</p>
 
-
+        <hr class="mb-50" size="10" width="50%"  noshade>
 
       <div class="row d-flex justify-content-center">
         <div class="col-sm-4">
-          <div class="card">
+          <div class="">
             <div class="card-body">
               <h5 class="card-title">CONTATO</h5>
               <p class="card-text ">Tel: (11) 3456-7890</p>
@@ -21,8 +26,8 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
+          <div class="">
+            <div class="card-body ">
               <h5 class="card-title">ENDEREÇO</h5>
               <p class="card-text">Av. Bernardino de Campos 98</p>
               <p> São Paulo, SP 12345-678</p>
@@ -31,12 +36,12 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
+          <div class="">
+            <div class="card-body ml-5">
               <h5 class="card-title">HORÁRIO</h5>
               <p class="card-text">Seg - Sex: 7:00 - 22:00</p>
-                <p>​​Sábado: 8:00 - 22:00</p>
-                <p>Domingo: 8:00 - 23:00</p>
+              <p>​​Sábado: 8:00 - 22:00</p>
+              <p>Domingo: 8:00 - 23:00</p>
 
             </div>
           </div>
@@ -47,12 +52,13 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-6">
             <label for="Nome" class="form-label">Nome</label>
-            <input type="txt" class="form-control" id="nome" placeholder="Ex: João">
+            <input type="text" class="form-control mb-3" id="nome" placeholder="Ex: João" onkeyup='validaNome()'>
+            <div id=""></div>
           </div>
 
           <div class="col-md-6">
             <label for="Sobrenome" class="form-label">Sobrenome</label>
-            <input type="txt" class="form-control" id="sobrenome" placeholder="Augusto">
+            <input type="text" class="form-control mb-3" id="sobrenome" placeholder="Augusto">
           </div>
 
         </div>
@@ -60,11 +66,11 @@
         <div class="row">
           <div class="col-sm-6">
             <label for="Email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control mb-3" id="email" placeholder="name@example.com">
           </div>
           <div class="col-sm-6">
             <label for="Assunto" class="form-label">Assunto</label>
-            <input type="txt" class="form-control" id="assunto" placeholder="">
+            <input type="text" class="form-control" id="assunto" placeholder="Digite o assunto">
           </div>
         </div>
 
@@ -73,45 +79,25 @@
           <textarea class="form-control" id="Dig_mesage" rows="3">Digite sua mensagem aqui...</textarea>
         </div>
         <div class="row">
-          <div class="col-sm-4">
-
-          </div>
-          <div class="col-sm-6 justify-content-center">
-            <button type="submit" class="btn btn-primary mb-3">Enviar</button>
-
-            <div class=" container mb-3">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.480424509091!2d-46.65261248581766!3d-23.551182967099777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce584a8a0b8cb1%3A0x1ca4ba7ea36c0373!2sR.%20Augusta%2C%20450%20-%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001305-000!5e0!3m2!1spt-BR!2sbr!4v1650345750403!5m2!1spt-BR!2sbr"
-                width=""
-                height=""
-                frameborder="0"
-                style="border:0;"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"
-                onmousemove="mapaZoom()"
-                onmouseout="mapanormal()"
-                id='mapa'
-                ></iframe>
-              </div>
+          <div class="col-md d-flex justify-content-center mr-0 ">
+            <button type="submit" class="btn btn-success mb-50">Enviar</button>
           </div>
         </div>
+
+
+            <div class=" container mb-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.480424509091!2d-46.65261248581766!3d-23.551182967099777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce584a8a0b8cb1%3A0x1ca4ba7ea36c0373!2sR.%20Augusta%2C%20450%20-%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001305-000!5e0!3m2!1spt-BR!2sbr!4v1650345750403!5m2!1spt-BR!2sbr"
+                width="992" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"
+                onmousemove="mapaZoom()" onmouseout="mapanormal()" id='mapa'></iframe>
+
+
+              </div>
       </form>
     </div>
+  </div>
+
+  <div class="ml-50"></div>
+</div>
 
 
-    <div>
-      <div class="ml-50">
-
-
-
-
-      </div>
-    </div>
-
-
-
-
-
-
-    <p></p>
-    <p></p>
