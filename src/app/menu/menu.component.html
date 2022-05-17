@@ -11,19 +11,25 @@
       <li class="nav-item active">
         <img src="https://i.imgur.com/fxDLdT1.png"  alt="Logo Veggieats"  width="200">
           </li>
+    </ul>
 
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
-          </li>
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink="/sobre">SOBRE NÓS</a>
-          </li>
-          <li class="nav-item p-1 fredoka">
-            <a class="nav-verde" href="#" routerLink="contato">CONTATO</a>
-          </li>
-          </ul>
+<!-- LISTA DE ITENS -->
+<ul class="navbar-nav d-flex align-items-center ml-auto">
+  <li class="nav-item active p-1 fredoka">
+  <a class="nav-verde" href="#">INÍCIO<span class="sr-only">(página atual)</span></a>
+    </li>
+    <li class="nav-item p-1 fredoka">
+      <a class="nav-verde" href="#" routerLink='/restaurantes'>RESTAURANTES</a>
+    </li>
+    <li class="nav-item p-1 fredoka">
+      <a class="nav-verde" href="#" routerLink="/sobre">SOBRE NÓS</a>
+    </li>
+    <li class="nav-item p-1 fredoka">
+      <a class="nav-verde" href="#" routerLink="contato">CONTATO</a>
+    </li>
+    </ul>
+
 <!-- USUÁRIO ENTRAR / INFO DO USUÁRIO -->
-
       <!-- CASO O USUÁRIO NÃO ESTEJA LOGADO -->
         <ul class="navbar-nav d-flex ml-auto align-items-center" >
           <div class="col-6 d-flex justify-content-center m-0 p-0" *ngIf="!auth.logado()">
