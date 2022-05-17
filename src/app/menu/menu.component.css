@@ -52,11 +52,36 @@ a{
   height: 80px;
   width: 80px;
 }
+
 .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
+}
+
+.button-create{
+  background-color: var(--verdeClaro);
+  color: var(--marromPadrao);
+  border: 0;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 6px 15px;
+  font-size: 1.2em bolder;
+}
+
+.button-enter{
+  background-color: var(--marromPadrao);
+  color: var(--verdeClaro);
+  border: 0;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 6px 15px;
+  font-size: 1.2em bolder;
+}
+
+.button-enter:hover{
+  background-color: #57462a;
 }
 

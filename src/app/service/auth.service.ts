@@ -41,7 +41,6 @@ export class AuthService {
 
   getAllUsuarios(): Observable<Usuario[]>{
     return this.http.get<Usuario[]>('https://veggieats.herokuapp.com/usuario/all')
-
     }
 
     logado(){
@@ -50,6 +49,13 @@ export class AuthService {
         ok=true
       }
       return ok
+    }
+    userId() {
+      let id: number = 0
+      if (environment.id != 0){
+        id = environment.id
+      }
+      return id
     }
 
 }

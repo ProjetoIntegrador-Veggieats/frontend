@@ -13,10 +13,12 @@ export class MenuComponent implements OnInit {
 
 
 
+  usuario: Usuario = new Usuario()
   nome: string = environment.nome
   foto: string = environment.foto
   idUser: number = environment.id
   login: boolean = true
+  id = environment.id
 
   constructor(
     private router:Router,
@@ -25,7 +27,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.auth.refreshToken()
+
   }
+
 
   sair(){
     this.router.navigate(['/inicio'])
