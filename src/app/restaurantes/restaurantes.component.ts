@@ -30,6 +30,7 @@ export class RestaurantesComponent implements OnInit {
   listaFiltrada: any = []
 
   nomeProduto: string
+  userSemProduto: Produto[]
 
   constructor(
     public authService: AuthService,
@@ -101,6 +102,7 @@ export class RestaurantesComponent implements OnInit {
     })
   }
 }
+
 
 
   customOptions: OwlOptions = {
