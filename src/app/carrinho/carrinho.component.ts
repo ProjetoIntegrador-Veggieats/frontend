@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Produto } from '../model/Produto';
 import { AuthService } from '../service/auth.service';
 import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
@@ -11,6 +13,7 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class CarrinhoComponent implements OnInit {
 
+  produtos: Produto[] = []
   listaCompras = this.carrinho.listar()
   comprados = this.carrinho.listar();
 
@@ -18,7 +21,8 @@ export class CarrinhoComponent implements OnInit {
     private carrinho: CarrinhoService,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -30,8 +34,9 @@ export class CarrinhoComponent implements OnInit {
     return this.comprados.map((item) => item.preco).reduce((a, b) => a + b, 0);
   }
 
-  parcela(){
-    return this.total()/12
+  enviar(){
+    alert('Enviamos seu pedido ao restaurante!!!')
+      this.router.navigate(["/inicio"])
   }
 
 }
