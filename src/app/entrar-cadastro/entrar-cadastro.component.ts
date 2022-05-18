@@ -39,8 +39,8 @@ export class EntrarCadastroComponent implements OnInit {
       alert("As senhas estão incorretas")
       }else{
         this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=> {this.usuario=resp
-        this.router.navigate(["/inicio"])
-        alert("Usuario cadastrado com sucesso!")}
+        this.router.navigate(["/login"])
+        alert("Usuario cadastrado com sucesso! Acesse o site em entrar")}
 
         )
       }
@@ -51,6 +51,7 @@ export class EntrarCadastroComponent implements OnInit {
       environment.nome=this.usuarioLogin.nome
       environment.foto=this.usuarioLogin.foto
       environment.id=this.usuarioLogin.id
+      environment.tipo=this.usuarioLogin.tipoUsuario
 
       console.log(environment.token)
       console.log(environment.nome)

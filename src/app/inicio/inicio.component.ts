@@ -29,7 +29,7 @@ export class InicioComponent implements OnInit {
     private router:Router,
     private categoriaService:CategoriaService,
     private produtoService:ProdutoService,
-    private authService:AuthService,
+    public auth: AuthService,
     private route: ActivatedRoute
     ) { }
 
@@ -37,7 +37,7 @@ export class InicioComponent implements OnInit {
 
     window.scroll(0,0)
 
-    this.authService.refreshToken()
+    this.auth.refreshToken()
     this.getAllCategorias()
     this.getAllProdutos()
 
@@ -60,7 +60,7 @@ export class InicioComponent implements OnInit {
     })
   }
   findByIdUser(){
-    this.authService.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
+    this.auth.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
       this.user=resp
     })
   }
@@ -77,5 +77,7 @@ export class InicioComponent implements OnInit {
   enviar(){
     alert('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
   }
+
+
 
 }

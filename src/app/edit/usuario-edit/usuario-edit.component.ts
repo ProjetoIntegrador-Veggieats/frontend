@@ -17,6 +17,8 @@ export class UsuarioEditComponent implements OnInit {
   tipoDeUsuario: string;
   confirmarSenha: string;
 
+  idUsuario = environment.id
+
   constructor(
     private auth: AuthService,
     private route: ActivatedRoute,
@@ -74,6 +76,10 @@ export class UsuarioEditComponent implements OnInit {
     }
   }
 
+  findByIdUser(){
+    this.auth.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) =>{
+      this.usuario= resp
+    })
 
-
+}
 }

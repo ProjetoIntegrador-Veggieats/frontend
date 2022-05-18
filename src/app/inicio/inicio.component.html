@@ -58,7 +58,8 @@
                 <div class="col-md-9">
                   <div class="form-group mb-4 mt-4">
                     <h1 class="display-5 fredoka">APOIE O VEGGIEATS</h1>
-                    <p class="lead mt-3 mb-5">Seja um parceiro, colaborador, ou cliente fidelidade. Vamos ajudar a causa das micros, pequenas e médias empresas que produzem produtos focando na sustentabilidade, elaborando refeições Veganas e Vegetarianas!</p>
+                    <p class="lead mt-3">Seja um parceiro, colaborador, ou cliente fidelidade. Vamos ajudar a causa das micros, pequenas e médias empresas que produzem produtos focando na sustentabilidade, elaborando refeições Veganas e Vegetarianas!</p>
+                    <a class="branco" routerLink="/contato">Entre em contato aqui</a>
                   </div>
                 </div>
               </div>
@@ -67,37 +68,41 @@
   <!-- jumbotron fim-->
 
 
-        <div class="container d-flex justify-content-center">
-          <div class="row">
+        <div class="container mt-3 d-flex justify-content-center">
+          <div class="row ">
             <div class="col-md-12 mt-2 justify-content-center text-center">
               <h1 class="text-center corroxo fredoka">CATEGORIAS</h1>
-              <div class="clicavel">
-                <a routerLink="/categoria" class="text-center justify-content-center corroxo">+ Adicionar Categoria</a>
+              <div class="clicavel" *ngIf="auth.vendedor()" >
+                <a [routerLink]="['/categoria']" class="text-center justify-content-center corroxo">+ Adicionar Categoria</a>
               </div>
               <p class="text-center corMarrom">Essas são nossas categorias disponiveis para pedir e abusar!</p>
             </div>
           </div>
         </div>
-        <div class="container">
+        <div class="container d-flex align-items-center justify-content-center">
           <div class="row d-flex justify-content-center">
             <div class="col-md-2" *ngFor="let item of listaCategorias">
-              <img class="card-img-top" src={{item.foto}} alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">{{item.nome}}</h5>
-                    <p class="card-text">{{item.descricao}}</p>
-                    <div>
-                      <button>
-                        <a [routerLink]="['/categoria-edit', item.id]" href="">Editar</a>
-                      </button>
-                      <button>
-                        <a [routerLink]="['/categoria-delete', item.id]" href="">Apagar</a>
-                      </button>
-                    </div>
+
+              <div class="card-body justify-content-center">
+                <table class="table ">
+                  <thead>
+                    <tr>
+                      <th class="card-text text-center"><img class="card-img-top" src={{item.foto}} alt="Card image cap"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <p class="card-text text-center p-2">{{item.descricao}}</p>
+                  </tbody>
+                </table>
+                <div class="mb-3 mt-3 d-flex justify-content-center" *ngIf="auth.vendedor()">
+                  <a class="cat" [routerLink]="['/categoria-edit', item.id]" href="">Editar</a>
+                  <a class="cat ml-3" [routerLink]="['/categoria-delete', item.id]" href="">Apagar</a>
+                </div>
+              </div>
 
 
             </div>
           </div>
-        </div>
 
 
   <!-- Modal -->

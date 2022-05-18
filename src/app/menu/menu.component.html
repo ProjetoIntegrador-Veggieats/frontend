@@ -9,7 +9,7 @@
 <!-- LOGO VEGGIEATS -->
     <ul class="navbar-nav d-flex align-items-center justify-content-center">
       <li class="nav-item active">
-        <img src="https://i.imgur.com/rAG2hgG.png"  alt="Logo Veggieats"  width="200">
+        <img src="https://i.imgur.com/fxDLdT1.png"  alt="Logo Veggieats"  width="200">
           </li>
     </ul>
 
@@ -57,10 +57,14 @@
               <i class="fa fa-shopping-cart " aria-hidden="true" routerLink="/carrinho"></i>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a [routerLink]="['/usuario-edit', usuario.id]"  class="dropdown-item" >MEUS DADOS</a>
+
+          <div  *ngIf="auth.vendedor()">
+            <div class="dropdown-divider"></div>
+          <a [routerLink]="['/produto']" class="dropdown-item">CADASTRAR PRODUTO</a>
+          </div>
+
           <div class="dropdown-divider"></div>
-          <a routerLink="/produto"  class="dropdown-item">CADASTRAR PRODUTO</a>
-          <div class="dropdown-divider"></div>
-          <a (click)="sair()" class="dropdown-item" href="#"routerLink="/login">SAIR</a>
+          <a (click)="sair()" class="dropdown-item">SAIR</a>
       </div>
     </div>
   </div>
