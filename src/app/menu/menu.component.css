@@ -24,7 +24,7 @@ a{
   text-decoration: none;
 }
 .fa{
-  color: var(--verdeClaro)
+  color: var(--verdePadrao)
 }
 .fa:hover{
   color: var(--laranjaPadrao);

@@ -72,7 +72,7 @@
           <div class="row ">
             <div class="col-md-12 mt-2 justify-content-center text-center">
               <h1 class="text-center corroxo fredoka">CATEGORIAS</h1>
-              <div class="clicavel" *ngIf="auth.vendedor()" >
+              <div class="clicavel" *ngIf="auth.adm()" >
                 <a [routerLink]="['/categoria']" class="text-center justify-content-center corroxo">+ Adicionar Categoria</a>
               </div>
               <p class="text-center corMarrom">Essas são nossas categorias disponiveis para pedir e abusar!</p>
@@ -94,7 +94,7 @@
                       <p class="card-text text-center p-2">{{item.descricao}}</p>
                   </tbody>
                 </table>
-                <div class="mb-3 mt-3 d-flex justify-content-center" *ngIf="auth.vendedor()">
+                <div class="mb-3 mt-3 d-flex justify-content-center" *ngIf="auth.adm()">
                   <a class="cat" [routerLink]="['/categoria-edit', item.id]" href="">Editar</a>
                   <a class="cat ml-3" [routerLink]="['/categoria-delete', item.id]" href="">Apagar</a>
                 </div>
@@ -132,15 +132,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="Titulovender">VENDA CONOSCO!!!</h5>
+          <h5 class="modal-title" id="Titulovender">Seja um Parceiro VeggiEats! </h5>
           <button type="button" data-dismiss="modal" aria-label="Fechar" class="bt">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body" data-dismiss="modal">
-          <p> Se você produz algum produto <span>VEGANO</span> ou <span>VEGETARINO</span>, ESTE É O LUGAR CERTO!</p>
-          <p> Basta se cadastrar como: (Tipo do Usuário: Vendedor(a))</p>
-          <p> Acesse o link <a routerLink="/login" class="verde ml-1 mr-1">aqui</a> para se cadastrar.</p>
+          <p> Se você produz algum produto <span>VEGANO</span> ou <span>VEGETARINO</span>, você está no lugar certo!</p>
+          <p> Basta selecionar "Vendedor(a)" no campo de "Tipo de Usuário" em nosso cadastro.</p>
+          <p> Acesse o link <a routerLink="/login" class="verde ml-1 mr-1">aqui</a> e venha vender conosco agora mesmo!</p>
         </div>
       </div>
     </div>
@@ -152,13 +152,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="Tituloentregar">ENTREGE PARA NÓS!!!</h5>
+          <h5 class="modal-title" id="Tituloentregar">Entregue Conosco!</h5>
           <button type="button" data-dismiss="modal" aria-label="Fechar" class="bt">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p> Se você tem CNH em dia, deixe seu email aqui embaixo para que entremos em contato com você para analise!</p>
+          <p> Se você tem CNH em dia, deixe seu email aqui que entraremos em contato o mais rápido possível.</p>
           <label for="titulo">E-mail:</label>
               <input name="titulo" type="text" class="form-control" id="titulo" placeholder="exemplo@exemplo.com ">
               <div class="modal-footer">

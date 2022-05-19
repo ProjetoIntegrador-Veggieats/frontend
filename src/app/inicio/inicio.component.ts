@@ -8,6 +8,7 @@ import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { AuthService } from '../service/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -30,7 +31,8 @@ export class InicioComponent implements OnInit {
     private categoriaService:CategoriaService,
     private produtoService:ProdutoService,
     public auth: AuthService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService,
     ) { }
 
     ngOnInit() {
@@ -64,18 +66,9 @@ export class InicioComponent implements OnInit {
       this.user=resp
     })
   }
-  publicar(){
-    this.categoria.id=this.idCategoria
-    this.produto.categoria=this.categoria
-    this.user.id=this.idUser
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {this.produto=resp
-    alert('Produto cadastrado')
-      this.produto=new Produto()
-      this.getAllProdutos()
-    })
-  }
+
   enviar(){
-    alert('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
+    this.alertas.showAlertInfo('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
   }
 
 

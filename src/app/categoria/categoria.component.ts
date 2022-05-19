@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class CategoriaComponent implements OnInit {
 
 constructor(
   private router:Router,
-  private categoriaService: CategoriaService
+  private categoriaService: CategoriaService,
+  private alertas: AlertasService,
 ) { }
 
 ngOnInit() {
@@ -24,7 +26,7 @@ ngOnInit() {
   window.scroll(0,0)
 
   if(environment.token==''){
-    alert("Sua sessão expirou, por favor façao o login novamente!")
+  this.alertas.showAlertDanger("Sua sessão expirou, por favor faça o login novamente!")
   this.router.navigate(['/login'])
   }
   this.categoriaService.refreshToken()

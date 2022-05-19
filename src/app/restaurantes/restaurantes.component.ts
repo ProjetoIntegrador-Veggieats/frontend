@@ -54,13 +54,7 @@ export class RestaurantesComponent implements OnInit {
     });
   }
 
-//  getAllProdutos() {
-//     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-//       this.listaProdutos = resp;
-//       this.listaFiltrada = this.listaProdutos.sort((a, b) => a.preco - b.preco).slice(0,8)
-//       console.log(this.listaFiltrada)
-//     });
-//   }
+
 
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
@@ -78,8 +72,6 @@ export class RestaurantesComponent implements OnInit {
     this.produtoService.getByIdProdutos(id).subscribe((resp: Produto) =>{
       this.produto = resp;
       this.addProduto()
-      // this.desconto();
-      // this.parcela();
     })
   }
 
