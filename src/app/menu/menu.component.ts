@@ -30,7 +30,6 @@ export class MenuComponent implements OnInit {
 
   }
 
-
   sair(){
     this.router.navigate(['/inicio'])
     environment.token = ''
@@ -38,6 +37,7 @@ export class MenuComponent implements OnInit {
     environment.nome = ''
     environment.usuario = ''
     environment.id = 0
+    environment.tipo = ''
 }
 
 }

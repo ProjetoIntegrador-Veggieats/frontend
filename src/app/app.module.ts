@@ -23,6 +23,8 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     CategoriaComponent,
     ProdutoComponent,
     CarrinhoComponent,
-    UsuarioEditComponent
+    UsuarioEditComponent,
+    AlertasComponent
 
   ],
   imports: [
@@ -50,7 +53,8 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    ModalModule.forRoot()
   ],
   providers: [
     {provide:LocationStrategy,

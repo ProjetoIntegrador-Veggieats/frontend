@@ -57,7 +57,7 @@ a{
   color: white;
 }
 a:hover{
-  text-decoration: none;
+ color: black;
 }
 /* From uiverse.io by @alexroumi */
 button{
@@ -92,4 +92,40 @@ button:hover {
 
 button:hover::before {
   width: 100%;
+}
+.cat{
+  padding: 5px 5px 5px 5px;
+  background-color: rgb(210, 138, 5);
+  color: white;
+  border-radius: 10px;
+}
+.cat:hover{
+  font-size: 13px;
+  text-decoration: none;
+  color:white
+}
+.card-body{
+  padding: 0;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 0
+}
+.table td, .table th {
+  padding: 0;
+  vertical-align: top;
+  border-top: 0
+}
+.col-md-2{
+  padding: 0;
+}
+
+.branco{
+  color: white;
+  text-decoration: underline;
+}
+.branco:hover{
+  font-size: 17px;
+  color: var(--roxoMaisClaro)
 }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class EntrarCadastroComponent implements OnInit {
   usuarioLogin: UsuarioLogin= new UsuarioLogin
 
   constructor(private authService: AuthService,
-              private router: Router ) { }
+              private router: Router,
+              private alertas: AlertasService) { }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -39,8 +41,9 @@ export class EntrarCadastroComponent implements OnInit {
       alert("As senhas estão incorretas")
       }else{
         this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=> {this.usuario=resp
-        this.router.navigate(["/inicio"])
-        alert("Usuario cadastrado com sucesso!")}
+        this.router.navigate(["/login"])
+        this.alertas.showAlertSuccess("Usuario cadastrado com sucesso! Efetue o Login para autenticar sua conta.")
+      }
 
         )
       }
@@ -51,17 +54,12 @@ export class EntrarCadastroComponent implements OnInit {
       environment.nome=this.usuarioLogin.nome
       environment.foto=this.usuarioLogin.foto
       environment.id=this.usuarioLogin.id
-
-      console.log(environment.token)
-      console.log(environment.nome)
-      console.log(environment.foto)
-      console.log(environment.id)
-
+      environment.tipo=this.usuarioLogin.tipoUsuario
 
       this.router.navigate(['/inicio'], { queryParams: { user: environment.id } })},
       error: erro=> {
       if (erro.status==401) {
-        alert("Usuário ou senha incorretos")
+        this.alertas.showAlertDanger("Usuário e/ou senha incorretos")
       }
     }})
 }

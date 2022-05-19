@@ -10,7 +10,8 @@ import { Categoria } from '../model/Categoria';
 export class CategoriaService {
 
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+
   ) {}
 
 

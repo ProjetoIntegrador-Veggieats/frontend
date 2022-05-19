@@ -8,6 +8,7 @@ import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { AuthService } from '../service/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -29,15 +30,16 @@ export class InicioComponent implements OnInit {
     private router:Router,
     private categoriaService:CategoriaService,
     private produtoService:ProdutoService,
-    private authService:AuthService,
-    private route: ActivatedRoute
+    public auth: AuthService,
+    private route: ActivatedRoute,
+    private alertas: AlertasService,
     ) { }
 
     ngOnInit() {
 
     window.scroll(0,0)
 
-    this.authService.refreshToken()
+    this.auth.refreshToken()
     this.getAllCategorias()
     this.getAllProdutos()
 
@@ -60,22 +62,15 @@ export class InicioComponent implements OnInit {
     })
   }
   findByIdUser(){
-    this.authService.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
+    this.auth.getByIdUsuario(this.idUser).subscribe((resp:Usuario)=>{
       this.user=resp
     })
   }
-  publicar(){
-    this.categoria.id=this.idCategoria
-    this.produto.categoria=this.categoria
-    this.user.id=this.idUser
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=> {this.produto=resp
-    alert('Produto cadastrado')
-      this.produto=new Produto()
-      this.getAllProdutos()
-    })
-  }
+
   enviar(){
-    alert('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
+    this.alertas.showAlertInfo('Seu e-mail já foi enviado para análise. Aguarde para mais informações')
   }
+
+
 
 }
