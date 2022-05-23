@@ -21,8 +21,13 @@ export class CarrinhoService {
   }
 
   limpar(){
-    this.produtos = [];
-    return this.produtos;
+    this.produtos.splice(0, this.produtos.length)
   }
 
+  removerItem(element: number) {
+    this.produtos.forEach((value, index) => {
+      if(value===element) this.produtos.splice(index, 1);
+    })
+  }
+  
 }

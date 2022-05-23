@@ -128,10 +128,12 @@
           <!-- <a [routerLink]="['/produto-edit', item.id]" class="btn btn-outline-secondary mr-3 mt-3">Editar</a>
               <a [routerLink]="['/produto-delete', item.id]" class="btn btn-outline-danger mr-3 mt-3">Apagar</a> -->
 
-          <a class="btn mt-3 w-100" (click)="getProdById(item.id)"
-            ><i class="fa fa-cart-plus" aria-hidden="true"></i
-          ></a>
-        </div>
+          <a *ngIf="!authService.logado()" class="btn mt-3 w-100" (click)="alertaCarrinho()"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+
+          <a *ngIf="authService.logado()" class="btn mt-3 w-100" (click)="getProdById(item.id)">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+
+      </div>
       </div>
     </div>
   </div>
@@ -179,8 +181,13 @@
               <small class="text-muted">{{ item.categoria.nome }}</small>
             </p>
             <p class="card-text mt-2">R$: {{ item.preco }},00</p>
-            <a class="btn mt-3 w-100" (click)="getProdById(item.id)">
-              <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+
+
+          <a *ngIf="!authService.logado()" class="btn mt-3 w-100" (click)="alertaCarrinho()"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+          
+          <a *ngIf="authService.logado()" class="btn mt-3 w-100" (click)="getProdById(item.id)">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+
           </div>
         </div>
       </div>
@@ -223,9 +230,12 @@
             </p>
             <p class="card-text mt-2">{{ item.descricao }}</p>
             <p class="card-text mt-2">R$: {{ item.preco }},00</p>
-            <a class="btn mt-3 w-100" (click)="getProdById(item.id)"
-              ><i class="fa fa-cart-plus" aria-hidden="true"></i
-            ></a>
+            
+            <a *ngIf="!authService.logado()" class="btn mt-3 w-100" (click)="alertaCarrinho()"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+          
+            <a *ngIf="authService.logado()" class="btn mt-3 w-100" (click)="getProdById(item.id)">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+  
           </div>
         </div>
       </div>

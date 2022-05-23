@@ -10,6 +10,7 @@ import { Usuario } from '../model/Usuario';
 import { environment } from 'src/environments/environment.prod';
 import { CarrinhoService } from '../service/carrinho.service';
 import { Observable } from 'rxjs';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-restaurantes',
@@ -37,7 +38,8 @@ export class RestaurantesComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private router: Router,
-    private carrinho: CarrinhoService
+    private carrinho: CarrinhoService,
+    private alertas: AlertasService,
   ) {}
 
   ngOnInit() {
@@ -72,7 +74,12 @@ export class RestaurantesComponent implements OnInit {
     this.produtoService.getByIdProdutos(id).subscribe((resp: Produto) =>{
       this.produto = resp;
       this.addProduto()
+      this.alertas.showAlertSuccess("Produto adicionado ao carrinho com sucesso!")
     })
+  }
+
+  alertaCarrinho(){
+    this.alertas.showAlertDanger("Efetue o login para adicionar itens ao carrinho!")
   }
 
   addProduto(){

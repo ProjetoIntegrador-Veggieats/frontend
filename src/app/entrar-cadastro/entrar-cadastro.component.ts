@@ -38,7 +38,7 @@ export class EntrarCadastroComponent implements OnInit {
       this.usuario.tipoUsuario=this.tipoUsuario
 
       if(this.usuario.senha != this.confirmarSenha){
-      alert("As senhas estão incorretas")
+      this.alertas.showAlertDanger("As senhas não são compatíveis!")
       }else{
         this.authService.cadastrar(this.usuario).subscribe((resp: Usuario)=> {this.usuario=resp
         this.router.navigate(["/login"])
