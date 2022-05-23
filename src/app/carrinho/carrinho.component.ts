@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
@@ -31,7 +32,7 @@ export class CarrinhoComponent implements OnInit {
 
     window.scroll(0,0)
     if(environment.token==''){
-      this.alertas.showAlertDanger("Sua sessão expirou! Por favor, faça o login novamente!")
+      this.alerta.showAlertDanger("Sua sessão expirou! Por favor, faça o login novamente!")
       this.router.navigate(['/login'])
   }
   }
