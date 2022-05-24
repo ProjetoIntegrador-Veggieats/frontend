@@ -61,14 +61,14 @@ a{
   z-index: 1030;
 }
 
-.button-create{
-  background-color: var(--marromPadrao);
-  color: var(--verdeClaro);
+.text-create{
+  color: var(--marromPadrao);
   border: 0;
   text-decoration: none;
   border-radius: 6px;
   padding: 6px 15px;
   font-size: 1.2em bolder;
+  font-weight: bolder;
 }
 .button-create:hover{
   background-color: #57462a;

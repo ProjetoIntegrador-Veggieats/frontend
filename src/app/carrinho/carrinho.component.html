@@ -11,7 +11,7 @@
             </div>
             <div class="col-6 d-flex flex-column justify-content-center">
               <div class="row">
-                <h5 class='mr-3'> {{item.nome}}</h5>
+                <h5> {{item.nome}}</h5>
               </div>
             </div>
             <div class="col-3">
@@ -20,7 +20,7 @@
               </div>
             </div>
 
-            <button class="btn btn-danger btn-block">Remover Item</button>
+            <button class="btn btn-outline-danger btn-block mt-2">Remover Item</button>
 
           </div>
         </div>
@@ -35,11 +35,17 @@
           <div class="row">
             <div class="col-12">
               <div class="row">
-                <button class="btn btn-verde btn-block" (click)="enviar()">Finalizar compra</button>
+                <button class="btn btn-verde btn-block mb-5" (click)="enviar()">Finalizar compra</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+<hr>
+    <div class="col-12 mt-5">
+      <div class="row d-flex justify-content-center">
+        <button class="btn btn-outline-danger mr-3" (click)="removerAll()" >Remover Todos os Itens</button>
+        <button class="btn btn-outline-success" routerLink="/restaurantes">Continuar Comprando</button>
+      </div>
   </div>
