@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CarrinhoService } from '../service/carrinho.service';
 import { CategoriaService } from '../service/categoria.service';
@@ -22,12 +24,17 @@ export class CarrinhoComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
 
     window.scroll(0,0)
+    if(environment.token==''){
+      this.alerta.showAlertDanger("Sua sessão expirou! Por favor, faça o login novamente!")
+      this.router.navigate(['/login'])
+  }
   }
 
   total() {
@@ -35,8 +42,9 @@ export class CarrinhoComponent implements OnInit {
   }
 
   enviar(){
-    alert('Enviamos seu pedido ao restaurante!!!')
-      this.router.navigate(["/inicio"])
+    this.carrinho.limpar()
+    this.alerta.showAlertSuccess('Enviamos seu pedido ao restaurante!')
+    this.router.navigate(["/inicio"])
   }
 
 }
